@@ -1,26 +1,3 @@
-const mongoose = require("mongoose");
-
-const faceSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  fullName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-  },
-  hash: {
-    type: String,
-  },
-  descriptions: {
-    type: Array,
-    required: true,
-  },
-});
-
-const FaceModel = mongoose.model("Face", faceSchema);
-module.exports = FaceModel;
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f53b7077979e92af69a88fba0afb3b7021c8fca9cdd3dd16584eae1aaeb5d60
+size 452

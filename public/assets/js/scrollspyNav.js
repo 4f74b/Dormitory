@@ -1,22 +1,3 @@
-// Cache selectors
-var lastId,
-    sidenav = $(".sidenav"),
-    // All list items
-    menuItems = sidenav.find("a");
-
-menuItems.on('click', function(event) {
-  // Make sure this.hash has a value before overriding default behavior
-  if (this.hash !== "") {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-
-    // Store hash
-    var hash = this.hash;
-
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top + -82
-    }, 800);
-  }  // End if
-});
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab2d81d45430bda61ce61ed5556dfd0b83b613d592288f91d93fbb0c24b20d60
+size 677

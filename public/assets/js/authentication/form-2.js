@@ -1,18 +1,3 @@
-var togglePassword = document.getElementById("toggle-password");
-var formContent = document.getElementsByClassName('form-content')[0]; 
-var getFormContentHeight = formContent.clientHeight;
-
-var formImage = document.getElementsByClassName('form-image')[0];
-if (formImage) {
-	var setFormImageHeight = formImage.style.height = getFormContentHeight + 'px';
-}
-if (togglePassword) {
-	togglePassword.addEventListener('click', function() {
-	  var x = document.getElementById("password");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	});
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:58ff07b8e8840772419cd6ce798c3b7e1e4e8d39efddab72f82407bfcd51e565
+size 600

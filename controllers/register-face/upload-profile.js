@@ -1,14 +1,3 @@
-const canvas = require("canvas");
-const faceapi = require("@vladmandic/face-api/dist/face-api.node.js");
-const FaceModel = require("../../data-models/faceModel");
-
-const { Canvas, Image, ImageData } = canvas;
-faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
-
-async function uploadProfile(body) {
-  body.descriptions = JSON.parse(body.descriptions);
-  const data = await FaceModel({ ...body, hash: body.password });
-  await data.save();
-}
-
-module.exports = uploadProfile;
+version https://git-lfs.github.com/spec/v1
+oid sha256:7157a2343925f072531a64dc7c68df11aebdf5b53038bf9671150005505389e4
+size 491
