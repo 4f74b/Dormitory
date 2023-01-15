@@ -1,0 +1,413 @@
+<% layout('layouts/boilerplate') %>
+
+    <!--  BEGIN CONTENT AREA  -->
+    <div id="content" class="main-content mt-5 pt-3">
+        <div class="container p-1 m-0" style="min-width: 100%;">
+
+            <div class="modal-dialog m-0 d-flex justify-content-center" role="document" style="max-width: 100%;">
+                <div class="modal-content card component-card_9 rounded-0" style="width:100%;">
+                    <div class="row mb-4 mt-3">
+                        <div class="col-sm-3 col-12">
+                            <div class="nav flex-column nav-pills mb-sm-0 mb-3 text-center mx-auto"
+                                id="v-line-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active mb-3" id="v-line-pills-home-tab" data-toggle="pill"
+                                    href="#v-line-pills-home" role="tab" aria-controls="v-line-pills-home"
+                                    aria-selected="true">Leave Requests</a>
+                                <a class="nav-link mb-3  text-center" id="v-line-pills-profile-tab" data-toggle="pill"
+                                    href="#v-line-pills-profile" role="tab" aria-controls="v-line-pills-profile"
+                                    aria-selected="false">Intruders</a>
+                                <a class="nav-link mb-3  text-center" id="v-line-pills-messages-tab" data-toggle="pill"
+                                    href="#v-line-pills-messages" role="tab" aria-controls="v-line-pills-messages"
+                                    aria-selected="false">Messages</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9 col-12 p-0">
+                            <div class="tab-content" id="v-line-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-line-pills-home" role="tabpanel"
+                                    aria-labelledby="v-line-pills-home-tab">
+                                    <div class="media">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
+                                            <div class="widget widget-table-two">
+
+                                                <div class="widget-heading">
+                                                    <h5 class="p-2 text-warning">Leave Requests</h5>
+                                                </div>
+
+                                                <div class="widget-content">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <div class="th-content d-none">hidden</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Student</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Response</div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="p-1">
+                                                                        <div class="td-content customer-name">
+                                                                            <img src="assets/img/profile-13.jpg"
+                                                                                alt="avatar">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1 w-50">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <div>Aftab Alam</div>
+                                                                            <div>Muhammad Alam</div>
+                                                                            <div>Hostel#</div>
+                                                                            <div>Aftab Alam</div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <span class="badge badge-success mb-1"
+                                                                                role="button">Allow</span>
+                                                                            <span
+                                                                                class="badge badge-danger mt-1 pointer"
+                                                                                role="button">Reject</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="v-line-pills-profile" role="tabpanel"
+                                    aria-labelledby="v-line-pills-profile-tab">
+
+                                    <div class="media">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
+                                            <div class="widget widget-table-two">
+
+                                                <div class="widget-heading">
+                                                    <h5 class="p-2 text-danger">Possible Intruders</h5>
+                                                </div>
+
+                                                <div class="widget-content">
+                                                    <div class="table-responsive">
+                                                        <table class="table intruder">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <div class="th-content d-none">hidden</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Info</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Response</div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="p-1">
+                                                                        <div class="td-content customer-name">
+                                                                            <img src="assets/img/profile-13.jpg"
+                                                                                alt="avatar">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1 w-50">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <div>Unknown</div>
+                                                                            <div>time</div>
+                                                                            <div>Hostel#</div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <span class="badge badge-danger mb-1"
+                                                                                role="button">Ignore</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="v-line-pills-messages" role="tabpanel"
+                                    aria-labelledby="v-line-pills-messages-tab">
+                                    <div class="media">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
+                                            <div class="widget widget-table-two">
+
+                                                <div class="widget-heading">
+                                                    <h5 class="p-2 text-warning">Messages</h5>
+                                                </div>
+
+                                                <div class="widget-content">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <div class="th-content d-none">hidden</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Student</div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="th-content">Response</div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="p-1">
+                                                                        <div class="td-content customer-name">
+                                                                            <img src="assets/img/profile-13.jpg"
+                                                                                alt="avatar">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1 w-50">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <div>Aftab Alam</div>
+                                                                            <div>Muhammad Alam</div>
+                                                                            <div>Hostel#</div>
+                                                                            <div>Aftab Alam</div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class="p-1">
+                                                                        <div
+                                                                            class="d-flex flex-column align-item-center justify-content-center">
+                                                                            <span class="badge badge-success mb-1"
+                                                                                role="button">Allow</span>
+                                                                            <span
+                                                                                class="badge badge-danger mt-1 pointer"
+                                                                                role="button">Reject</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-content rounded-0" id="modal-reload" style="width: fit-content;">
+                    <div class="modal-body p-1">
+                        <div class="cameraWrapper h-100 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 w-100" id="wrapper">
+                            <!-- <div style="min-width: 720px; min-height:560px;"></div> -->
+                            <video muted id="video" width="720" height="560" autoplay
+                                class="position-relative revert"></video>
+                            <div class="loader1 d-none justify-content-center align-items-center">
+                                <div class="spinner-border text-info align-self-center loader-lg">Loading...
+                                </div>
+                                <div>Loading Faces</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <img src="" alt="" id="testImg">
+            <button id="stop" type="button" class="btn btn-primary">stop Camera</button>
+        </div>
+
+    </div>
+
+    <div class="footer-wrapper">
+        <div class="footer-section f-section-1">
+            <p class="">Copyright © 2021 <a target="_blank" href="https://designreset.com/">DesignReset</a>, All
+                rights reserved.</p>
+        </div>
+        <div class="footer-section f-section-2">
+            <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-heart">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
+                </svg></p>
+        </div>
+    </div>
+    </div>
+    <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+
+    <script src="face-api/face-api.min.js"></script>
+
+
+    <script>
+        //Stream camera output into video element
+        const video = document.getElementById("video");
+        let inverval2;
+        function startVideo() {
+            navigator.getUserMedia(
+                { video: {} },
+                (stream) => (video.srcObject = stream),
+                (err) => console.error(err)
+            );
+        }
+        //stop camera
+        function stopCamera() {
+            clearInterval(inverval2)
+            video.srcObject = null;
+            video.src = '';
+            video.pause();
+            navigator.getUserMedia({ video: true }, (stream) => {
+                stream.getTracks().forEach((track) => {
+                    track.enabled = false;
+                    track.stop();
+                })
+            }, err => console.error(err))
+        }
+
+
+
+        //require face models
+        Promise.all([
+            faceapi.nets.tinyFaceDetector.loadFromUri("/"),
+            faceapi.nets.faceLandmark68Net.loadFromUri("/"),
+            faceapi.nets.faceRecognitionNet.loadFromUri("/"),
+            faceapi.nets.faceExpressionNet.loadFromUri("/"),
+        ]).then(() => {
+            startVideo();
+            //detect faces when camera turns on
+            video.addEventListener("play", async () => {
+                const canvas = faceapi.createCanvasFromMedia(video);
+                canvas.classList.add("position-absolute");
+                document.getElementById("wrapper").append(canvas);
+                const displaySize = { width: video.width, height: video.height };
+                faceapi.matchDimensions(canvas, displaySize);
+
+
+                //Open loader ui
+                await document.querySelector('.loader1').classList.replace('d-none', 'd-flex');
+                let detection, tempImg;
+                inverval2 = setInterval(async () => {
+                    detections = await getDetections(canvas, displaySize);
+                    if (detections.length) {
+                        for (face of detections) {
+                            console.log(face.landmarks.getMouth());
+
+                            //Temporarily save image in a variable. If the resposnse from server says that the detection is unknown, then send the image to another route to save it
+                            tempImg = await extractFaceFromBox(video, face.detection._box);
+                            //Check if the detected face is present in database
+                            detection = await checkFace(face)
+                            //If the face is not present in database
+                            if (detection._label == 'unknown') {
+                                //Show picture in surveillane page
+                                document.querySelector('.intruder').innerHTML += '<tbody> <tr> <td class="p-1"> <div class="td-content customer-name"> <img src="' + tempImg + '" alt="avatar"> </div> </td> <td class="p-1 w-50"> <div class="d-flex flex-column align-item-center justify-content-center"> <div>Unknown</div> <div>time</div> <div>Hostel#</div> </div> </td> <td class="p-1"> <div class="d-flex flex-column align-item-center justify-content-center"> <span class="badge badge-danger mb-1" role="button">Ignore</span> </div> </td> </tr> </tbody>';
+
+                                //send picture of intruder to server
+                                //postIntruder(tempImg);
+                            }
+                        }
+                    }
+
+                }, 500)
+            });
+        });
+
+        //check if the detected face is present in database
+        async function checkFace(face) {
+
+            // POST request using fetch()
+            let res = await fetch("/check-face", {
+                method: "POST",
+                body: JSON.stringify(face),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            res = await res.json();
+            return res;
+        }
+
+        //Start detecting faces
+        async function getDetections(canvas, displaySize) {
+            const detections = await faceapi
+                .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+                .withFaceLandmarks()
+                .withFaceDescriptors();
+            document.querySelector('.loader1').classList.replace('d-flex', 'd-none');
+            const resizedDetections = faceapi.resizeResults(
+                detections,
+                displaySize
+            );
+            //clear canvas
+            canvas
+                .getContext("2d")
+                .clearRect(0, 0, canvas.width, canvas.height);
+
+
+            faceapi.draw.drawDetections(canvas, resizedDetections, { withScore: false });
+            //faceapi.draw.drawFaceLandmarks(canvas, resizedDetections, { drawLines: true })
+            return detections;
+        }
+
+
+        // This function extract a face from video frame with giving bounding box and display result into outputimage
+        async function extractFaceFromBox(inputVideo, box) {
+            let output;
+            const regionsToExtract = [
+                new faceapi.Rect(0, 0, 720, 560),
+            ];
+
+            let faceImages = await faceapi.extractFaces(
+                inputVideo,
+                regionsToExtract
+            );
+
+            if (faceImages.length == 0) {
+                console.log("Face not found");
+            } else {
+                faceImages.forEach((cnv) => {
+                    output = cnv.toDataURL();
+                });
+            }
+            return output;
+        }
+
+        //Send intruder data to database to save it
+        async function postIntruder(intruder) {
+            let formData = new FormData();
+            formData.append('intruder', intruder);
+            let res = await fetch("post-intruder/", {
+                method: "POST",
+                body: formData,
+            })
+            res = await res.json();
+        }
+
+        document.getElementById('stop').addEventListener('click', (evt) => {
+            stopCamera();
+        })
+
+
+    </script>
