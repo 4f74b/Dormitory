@@ -4,7 +4,8 @@
     <div id="content" class="main-content mt-5 pt-3">
         <div class="container p-1 m-0" style="min-width: 100%;">
 
-            <div class="modal-dialog m-0 d-flex justify-content-center" role="document" style="max-width: 100%;">
+            <div class="modal-dialog m-0 d-flex justify-content-center" role="document"
+                style="max-width: 100%; max-height:70vh;">
                 <div class="modal-content card component-card_9 rounded-0" style="width:100%;">
                     <div class="row mb-4 mt-3">
                         <div class="col-sm-3 col-12">
@@ -22,7 +23,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-9 col-12 p-0">
+                        <div class="col-sm-9 col-12 p-0" style="width:100%;">
                             <div class="tab-content" id="v-line-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-line-pills-home" role="tabpanel"
                                     aria-labelledby="v-line-pills-home-tab">
@@ -34,7 +35,7 @@
                                                     <h5 class="p-2 text-warning">Leave Requests</h5>
                                                 </div>
 
-                                                <div class="widget-content">
+                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
                                                     <div class="table-responsive">
                                                         <table class="table">
                                                             <thead>
@@ -86,7 +87,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="v-line-pills-profile" role="tabpanel"
+                                <div style="" class="tab-pane fade" id="v-line-pills-profile" role="tabpanel"
                                     aria-labelledby="v-line-pills-profile-tab">
 
                                     <div class="media">
@@ -97,7 +98,7 @@
                                                     <h5 class="p-2 text-danger">Possible Intruders</h5>
                                                 </div>
 
-                                                <div class="widget-content">
+                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
                                                     <div class="table-responsive">
                                                         <table class="table intruder">
                                                             <thead>
@@ -156,7 +157,7 @@
                                                     <h5 class="p-2 text-warning">Messages</h5>
                                                 </div>
 
-                                                <div class="widget-content">
+                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
                                                     <div class="table-responsive">
                                                         <table class="table">
                                                             <thead>
@@ -313,13 +314,12 @@
                     detections = await getDetections(canvas, displaySize);
                     if (detections.length) {
                         for (face of detections) {
-                            console.log(face.landmarks.getMouth());
-
                             //Temporarily save image in a variable. If the resposnse from server says that the detection is unknown, then send the image to another route to save it
                             tempImg = await extractFaceFromBox(video, face.detection._box);
                             //Check if the detected face is present in database
                             detection = await checkFace(face)
                             //If the face is not present in database
+                            console.log(detection);
                             if (detection._label == 'unknown') {
                                 //Show picture in surveillane page
                                 document.querySelector('.intruder').innerHTML += '<tbody> <tr> <td class="p-1"> <div class="td-content customer-name"> <img src="' + tempImg + '" alt="avatar"> </div> </td> <td class="p-1 w-50"> <div class="d-flex flex-column align-item-center justify-content-center"> <div>Unknown</div> <div>time</div> <div>Hostel#</div> </div> </td> <td class="p-1"> <div class="d-flex flex-column align-item-center justify-content-center"> <span class="badge badge-danger mb-1" role="button">Ignore</span> </div> </td> </tr> </tbody>';
