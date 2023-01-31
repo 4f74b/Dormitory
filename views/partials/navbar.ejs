@@ -56,7 +56,7 @@
 
             <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
                 <li class="menu mt-5">
-                    <a href="/dormitory/student" aria-expanded="false"
+                    <a href="/dormitory/student" aria-expanded="false" data-active="true"
                         class="dropdown-toggle d-flex align-items-center justify-content-center">
                         <div class="">
                             <div class="media d-flex flex-column align-items-center justify-content-center">
@@ -86,7 +86,37 @@
                     </a>
                 </li>
 
-
+                <li class="menu">
+                    <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>Pass Request</span>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                    <ul class="submenu list-unstyled collapse" id="dashboard" data-parent="#accordionExample" style="">
+                        <li>
+                            <a href="/dormitory/post-pass-request"> Send Pass Request </a>
+                        </li>
+                        <li class="">
+                            <a href="/dormitory/pass-request-status"> Pass request Status </a>
+                        </li>
+                        <li class="">
+                            <a href="/dormitory/admin/pass-requests"> Pass Requests </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="menu">
                     <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -114,8 +144,6 @@
                         <li>
                             <a href="/dormitory/post-complaint"> Write Complaint </a>
                         </li>
-                    </ul>
-                    <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
                         <li>
                             <a href="/dormitory/complaint-log"> Complaint Log </a>
                         </li>
@@ -123,51 +151,6 @@
                 </li>
 
 
-
-                <li class="menu">
-                    <a href="#dashboard" data-active="true" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle collapsed">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Dashboard</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="submenu list-unstyled collapse" id="dashboard" data-parent="#accordionExample" style="">
-                        <li>
-                            <a href="index-2.html"> Sales </a>
-                        </li>
-                        <li class="active">
-                            <a href="index2.html"> Analytics </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu">
-                    <a href="/dormitory/pass-request" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Send Pass Request</span>
-                        </div>
-                    </a>
-                </li>
                 <li class="menu">
                     <a href="/surveillance" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
