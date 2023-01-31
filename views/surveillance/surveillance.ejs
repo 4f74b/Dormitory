@@ -6,88 +6,12 @@
 
             <div class="modal-dialog m-0 d-flex justify-content-center" role="document"
                 style="max-width: 100%; max-height:70vh;">
-                <div class="modal-content card component-card_9 rounded-0" style="width:100%;">
-                    <div class="row mb-4 mt-3">
-                        <div class="col-sm-3 col-12">
-                            <div class="nav flex-column nav-pills mb-sm-0 mb-3 text-center mx-auto"
-                                id="v-line-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active mb-3" id="v-line-pills-home-tab" data-toggle="pill"
-                                    href="#v-line-pills-home" role="tab" aria-controls="v-line-pills-home"
-                                    aria-selected="true">Leave Requests</a>
-                                <a class="nav-link mb-3  text-center" id="v-line-pills-profile-tab" data-toggle="pill"
-                                    href="#v-line-pills-profile" role="tab" aria-controls="v-line-pills-profile"
-                                    aria-selected="false">Intruders</a>
-                                <a class="nav-link mb-3  text-center" id="v-line-pills-messages-tab" data-toggle="pill"
-                                    href="#v-line-pills-messages" role="tab" aria-controls="v-line-pills-messages"
-                                    aria-selected="false">Messages</a>
-                            </div>
-                        </div>
+                <div class="modal-content card component-card_9 rounded-0" style="">
+                    <div class="d-flex flex-column">
 
-                        <div class="col-sm-9 col-12 p-0" style="width:100%;">
-                            <div class="tab-content" id="v-line-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-line-pills-home" role="tabpanel"
-                                    aria-labelledby="v-line-pills-home-tab">
-                                    <div class="media">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
-                                            <div class="widget widget-table-two">
-
-                                                <div class="widget-heading">
-                                                    <h5 class="p-2 text-warning">Leave Requests</h5>
-                                                </div>
-
-                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
-                                                    <div class="table-responsive">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        <div class="th-content d-none">hidden</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Student</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Response</div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="p-1">
-                                                                        <div class="td-content customer-name">
-                                                                            <img src="assets/img/profile-13.jpg"
-                                                                                alt="avatar">
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1 w-50">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <div>Aftab Alam</div>
-                                                                            <div>Muhammad Alam</div>
-                                                                            <div>Hostel#</div>
-                                                                            <div>Aftab Alam</div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <span class="badge badge-success mb-1"
-                                                                                role="button">Allow</span>
-                                                                            <span
-                                                                                class="badge badge-danger mt-1 pointer"
-                                                                                role="button">Reject</span>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="" class="tab-pane fade" id="v-line-pills-profile" role="tabpanel"
+                        <div class="col-12 p-0 p-0 m-0" style="">
+                            <div class=" tab-content" id="v-line-pills-tabContent">
+                                <div style="" class="tab-pane active" id="v-line-pills-profile" role="tabpanel"
                                     aria-labelledby="v-line-pills-profile-tab">
 
                                     <div class="media">
@@ -98,7 +22,7 @@
                                                     <h5 class="p-2 text-danger">Possible Intruders</h5>
                                                 </div>
 
-                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
+                                                <div class="widget-content" style="height: 60vh; overflow-y: auto;">
                                                     <div class="table-responsive">
                                                         <table class="table intruder">
                                                             <thead>
@@ -118,7 +42,7 @@
                                                                 <tr>
                                                                     <td class="p-1">
                                                                         <div class="td-content customer-name">
-                                                                            <img src="assets/img/profile-13.jpg"
+                                                                            <img src="/assets/img/profile-13.jpg"
                                                                                 alt="avatar">
                                                                         </div>
                                                                     </td>
@@ -146,68 +70,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-                                <div class="tab-pane fade" id="v-line-pills-messages" role="tabpanel"
-                                    aria-labelledby="v-line-pills-messages-tab">
-                                    <div class="media">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
-                                            <div class="widget widget-table-two">
-
-                                                <div class="widget-heading">
-                                                    <h5 class="p-2 text-warning">Messages</h5>
-                                                </div>
-
-                                                <div class="widget-content" style="height: 65vh; overflow: scroll;">
-                                                    <div class="table-responsive">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        <div class="th-content d-none">hidden</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Student</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Response</div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="p-1">
-                                                                        <div class="td-content customer-name">
-                                                                            <img src="assets/img/profile-13.jpg"
-                                                                                alt="avatar">
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1 w-50">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <div>Aftab Alam</div>
-                                                                            <div>Muhammad Alam</div>
-                                                                            <div>Hostel#</div>
-                                                                            <div>Aftab Alam</div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <span class="badge badge-success mb-1"
-                                                                                role="button">Allow</span>
-                                                                            <span
-                                                                                class="badge badge-danger mt-1 pointer"
-                                                                                role="button">Reject</span>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
 
                             </div>
@@ -260,7 +122,7 @@
     <!-- END MAIN CONTAINER -->
 
 
-    <script src="face-api/face-api.min.js"></script>
+    <script src="/face-api/face-api.min.js"></script>
 
 
     <script>

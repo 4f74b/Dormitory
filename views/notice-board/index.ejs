@@ -6,9 +6,16 @@
     <link rel="stylesheet" type="text/css" href="/plugins/dropify/dropify.min.css">
     <!--  BEGIN CONTENT AREA  -->
     <div id="content" class="main-content mt-5 pt-3">
-        <div class="layout-px-spacing">
+        <div class="layout-px-spacing"
+            style="background-image: url(/assets/img/notice-board.jpg); background-repeat:initial; background-size:cover;">
             <div class="action-btn layout-top-spacing mb-5">
-                <button id="add-list" class="btn btn-primary">Add Notice</button>
+                <button id="add-list" class="btn btn-primary  mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square mr-2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>Add Notice</button>
             </div>
             <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalTitle"
                 style="display: none;" aria-hidden="true">
@@ -17,8 +24,8 @@
                         <div class="modal-body">
                             <div class="compose-box">
                                 <div class="compose-content" id="addTaskModalTitle">
-                                    <h5 class="add-task-title">Add Task</h5>
-                                    <h5 class="edit-task-title" style="display: none;">Edit Task</h5>
+                                    <h5 class="add-task-title">Add Notice</h5>
+                                    <h5 class="edit-task-title" style="display: none;">Edit Notice</h5>
 
                                     <div class="addTaskAccordion" id="add_task_accordion">
                                         <div class="card task-text-progress">
@@ -184,15 +191,23 @@
 
                     <div class="task-list-section flex-wrap">
 
-                        <div data-section="s-new" class="task-list-container mb-4" data-connect="sorting">
+                        <div data-section="s-new" class="col-md-4 mb-4" data-connect="sorting">
                             <div class="connect-sorting">
-                                <div class="task-container-header">
+                                <div class="task-container-header d-flex flex-column p-0">
+                                    <div class="d-flex justify-content-center">
+                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                                            viewBox="0 0 64 64" fill="red" stroke="#000000">
+                                            <line x1="8" y1="56" x2="24" y2="40" />
+                                            <path
+                                                d="m52 28 4-4-4-4-8-8-4-4-4 4a5.66 5.66 0 0 0 0 8l-8 8a11.31 11.31 0 0 0-16 0l23.94 24.12L36 52a11.36 11.36 0 0 0 0-16l8-8a5.66 5.66 0 0 0 8 0z" />
+                                        </svg>
+                                    </div>
                                     <h6 class="s-heading" data-listtitle="In Progress">Food Menu</h6>
                                 </div>
 
-                                <div class="connect-sorting-content ui-sortable" data-sortable="true">
+                                <div class="connect-sorting-content ui-sortable" data-sortable="false">
 
-                                    <div data-draggable="true" class="card img-task ui-sortable-handle" style="">
+                                    <div data-draggable="false" class="card img-task ui-sortable-handle" style="">
                                         <div class="card-body">
 
                                             <div class="task-header">
