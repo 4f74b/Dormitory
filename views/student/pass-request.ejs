@@ -1,0 +1,119 @@
+<% layout('layouts/boilerplate') %>
+    <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
+    <!--  BEGIN CONTENT AREA  -->
+    <div id="content" class="main-content mt-5 pt-3">
+        <div class="layout-px-spacing">
+
+            <div class="row layout-spacing">
+
+                <!-- Content -->
+                <div class="col-xl-8 col-sm-12 layout-top-spacing">
+
+
+                    <div class="user-profile layout-spacing">
+                        <div class="widget-content widget-content-area">
+                            <form class="needs-validation" novalidate action="javascript:void(0);">
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="fullName">Full Name</label>
+                                        <input type="text" class="form-control" id="fullName" placeholder="Full name"
+                                            value="" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="username" placeholder="Username"
+                                                aria-describedby="inputGroupPrepend" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your username.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="hostelNo">Hostel Number</label>
+                                        <input type="number" class="form-control" id="hostelNo" placeholder="hostel #"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Please provide your hostel number.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label for="roomNo">Room Number</label>
+                                        <input type="number" class="form-control" id="roomNo" placeholder="State"
+                                            required>
+                                        <div class="invalid-feedback">
+                                            Please provide your room number.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Reason of pass</span>
+                                    </div>
+                                    <textarea class="form-control" aria-label="With textarea" id="passReason"
+                                        required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide reason of pass.
+                                    </div>
+                                </div>
+                                <fieldset class="form-group mb-3">
+                                    <div class="d-flex">
+                                        <div class="n-chk">
+                                            <label class="new-control new-radio radio-dark">
+                                                <input type="radio" class="new-control-input" name="custom-radio-1"
+                                                    checked>
+                                                <span class="new-control-indicator"></span>Night pass
+                                            </label>
+                                        </div>
+
+                                        <div class="n-chk">
+                                            <label class="new-control new-radio radio-primary">
+                                                <input type="radio" class="new-control-input" name="custom-radio-1">
+                                                <span class="new-control-indicator"></span>Day pass
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+
+                                </fieldset>
+                                <button class="btn btn-primary mt-3" type="submit">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+    <script>
+
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    </script>
