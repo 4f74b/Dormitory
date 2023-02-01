@@ -35,6 +35,9 @@
 
     <link href="/plugins/loaders/custom-loader.css" rel="stylesheet" type="text/css">
 
+    <link href="/assets/css/users/account-setting.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/plugins/dropify/dropify.min.css">
+
 
     <div id="content" class="main-content mt-5 pt-3">
         <div class="layout-px-spacing">
@@ -43,51 +46,787 @@
 
 
 
-                <div class="form-container">
-                    <div class="form-form">
-                        <div class="form-form-wrap" style="min-width: 500px;">
-                            <div class="form-container">
+                <div class="form-container w-100">
+                    <div class="form-form w-100">
+                        <div class="form-form-wrap m-0" style="max-width:unset; width:70vw;">
+                            <div class="form-container p-0">
                                 <div class="form-content">
-                                    <h1 class="">
+                                    <h1 class="text-center">
                                         Get started By <br />
                                         registering
                                     </h1>
                                     <form class="text-left" method="post" action="/post-face">
                                         <div class="form">
-                                            <div id="username-field" class="field-wrapper input">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-user">
-                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="12" cy="7" r="4"></circle>
-                                                </svg>
-                                                <input id="fullName" name="fullName" type="text" class="form-control"
-                                                    placeholder="Full name" />
+                                            <div class="d-flex flex-wrap flex-column ml-5" style="">
+                                                <div class="col-xl-3 col-lg-4 col-md-6 col-12" style="">
+                                                    <div class="upload mt-4 pr-md-4">
+                                                        <input type="file" id="input-file-max-fs" class="dropify"
+                                                            data-default-file="" data-max-file-size="2M" />
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column justify-content-center" style="">
+                                                    <div id="username-field col-3" class="field-wrapper input">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="feather feather-user">
+                                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                            <circle cx="12" cy="7" r="4"></circle>
+                                                        </svg>
+                                                        <input id="fullName" name="fullName" type="text"
+                                                            class="form-control" placeholder="Full name" />
+                                                    </div>
+                                                    <div id="username-field col-3" class="field-wrapper input">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="feather feather-user">
+                                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                            <circle cx="12" cy="7" r="4"></circle>
+                                                        </svg>
+                                                        <input id="username" name="username" type="text"
+                                                            class="form-control" placeholder="Username">
+                                                    </div>
+                                                    <div id="email-field" class="field-wrapper input">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" class="feather feather-at-sign">
+                                                            <circle cx="12" cy="12" r="4"></circle>
+                                                            <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94">
+                                                            </path>
+                                                        </svg>
+                                                        <input id="email" name="email" type="text" value=""
+                                                            placeholder="Email" />
+                                                    </div>
+                                                    <div class="d-flex justify-content-end">
+                                                        <label class="dob-input d-flex align-items-center">Date of
+                                                            Birth</label>
+                                                        <div class="d-sm-flex d-block">
+                                                            <div class="form-group mr-1">
+                                                                <select class="form-control"
+                                                                    id="exampleFormControlSelect1">
+                                                                    <option>Day</option>
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                    <option>10</option>
+                                                                    <option>11</option>
+                                                                    <option>12</option>
+                                                                    <option>13</option>
+                                                                    <option>14</option>
+                                                                    <option>15</option>
+                                                                    <option>16</option>
+                                                                    <option>17</option>
+                                                                    <option>18</option>
+                                                                    <option>19</option>
+                                                                    <option selected="">20</option>
+                                                                    <option>21</option>
+                                                                    <option>22</option>
+                                                                    <option>23</option>
+                                                                    <option>24</option>
+                                                                    <option>25</option>
+                                                                    <option>26</option>
+                                                                    <option>27</option>
+                                                                    <option>28</option>
+                                                                    <option>29</option>
+                                                                    <option>30</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group mr-1">
+                                                                <select class="form-control" id="month">
+                                                                    <option>Month</option>
+                                                                    <option selected="">Jan</option>
+                                                                    <option>Feb</option>
+                                                                    <option>Mar</option>
+                                                                    <option>Apr</option>
+                                                                    <option>May</option>
+                                                                    <option>Jun</option>
+                                                                    <option>Jul</option>
+                                                                    <option>Aug</option>
+                                                                    <option>Sep</option>
+                                                                    <option>Oct</option>
+                                                                    <option>Nov</option>
+                                                                    <option>Dec</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group mr-1">
+                                                                <select class="form-control" id="year">
+                                                                    <option>Year</option>
+                                                                    <option>2018</option>
+                                                                    <option>2017</option>
+                                                                    <option>2016</option>
+                                                                    <option>2015</option>
+                                                                    <option>2014</option>
+                                                                    <option>2013</option>
+                                                                    <option>2012</option>
+                                                                    <option>2011</option>
+                                                                    <option>2010</option>
+                                                                    <option>2009</option>
+                                                                    <option>2008</option>
+                                                                    <option>2007</option>
+                                                                    <option>2006</option>
+                                                                    <option>2005</option>
+                                                                    <option>2004</option>
+                                                                    <option>2003</option>
+                                                                    <option>2002</option>
+                                                                    <option>2001</option>
+                                                                    <option>2000</option>
+                                                                    <option>1999</option>
+                                                                    <option>1998</option>
+                                                                    <option>1997</option>
+                                                                    <option>1996</option>
+                                                                    <option>1995</option>
+                                                                    <option>1994</option>
+                                                                    <option>1993</option>
+                                                                    <option>1992</option>
+                                                                    <option>1991</option>
+                                                                    <option>1990</option>
+                                                                    <option selected="">1989</option>
+                                                                    <option>1988</option>
+                                                                    <option>1987</option>
+                                                                    <option>1986</option>
+                                                                    <option>1985</option>
+                                                                    <option>1984</option>
+                                                                    <option>1983</option>
+                                                                    <option>1982</option>
+                                                                    <option>1981</option>
+                                                                    <option>1980</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div id="username-field" class="field-wrapper input">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-user">
-                                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                    <circle cx="12" cy="7" r="4"></circle>
-                                                </svg>
-                                                <input id="username" name="username" type="text" class="form-control"
-                                                    placeholder="Username">
+                                            <hr>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing ml-5">
+                                                <form id="contact" class="section contact">
+                                                    <div class="info">
+                                                        <h5 class="">Contact</h5>
+                                                        <div class="row">
+                                                            <div class="col-md-11 mx-auto">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="country">Country</label>
+                                                                            <select class="form-control" id="country">
+                                                                                <option>All Countries</option>
+                                                                                <option selected="">Pakistan</option>
+                                                                                <option>Afghanistan</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="address">Address(<small>province,
+                                                                                    district, street</small>)</label>
+                                                                            <input type="text" class="form-control mb-4"
+                                                                                id="address" placeholder="Address"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="phone">Phone</label>
+                                                                            <input type="number"
+                                                                                class="form-control mb-4" id="phone"
+                                                                                placeholder="Write your phone number here"
+                                                                                value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div id="email-field" class="field-wrapper input">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-at-sign">
-                                                    <circle cx="12" cy="12" r="4"></circle>
-                                                    <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
-                                                </svg>
-                                                <input id="email" name="email" type="text" value=""
-                                                    placeholder="Email" />
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing ml-5">
+                                                <form id="edu-experience" class="section edu-experience">
+                                                    <div class="info">
+                                                        <h5 class="">Education</h5>
+                                                        <div class="row">
+                                                            <div class="edu col-md-11 mx-auto">
+
+                                                                <div class="edu-section">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h4 class="text-center d-block">Enter your
+                                                                                college
+                                                                                information</h4>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label for="degree1">Enter Your Collage
+                                                                                    Name</label>
+                                                                                <input type="text"
+                                                                                    class="form-control mb-4"
+                                                                                    id="degree1"
+                                                                                    placeholder="Add your college name here"
+                                                                                    value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Starting From</label>
+
+                                                                                        <div class="row">
+
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control mb-4"
+                                                                                                    id="s-from2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Ending In</label>
+
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control input-sm"
+                                                                                                    id="end-in2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="edu col-md-11 mx-auto">
+
+                                                                <div class="edu-section">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h4 class="text-center d-block">Enter your
+                                                                                School
+                                                                                information</h4>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label for="degree1">Enter your School
+                                                                                    Name</label>
+                                                                                <input type="text"
+                                                                                    class="form-control mb-4"
+                                                                                    id="degree1"
+                                                                                    placeholder="Add your school name here"
+                                                                                    value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Starting From</label>
+
+                                                                                        <div class="row">
+
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control mb-4"
+                                                                                                    id="s-from2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Ending In</label>
+
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control input-sm"
+                                                                                                    id="end-in2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="edu col-md-11 mx-auto">
+
+                                                                <div class="edu-section">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <h4 class="text-center d-block">Enter your
+                                                                                information about
+                                                                                this
+                                                                                university</h4>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <label for="degree1">Enter your degree
+                                                                                    name</label>
+                                                                                <input type="text"
+                                                                                    class="form-control mb-4" id=""
+                                                                                    placeholder="Enter the name of your degree"
+                                                                                    value="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Starting From</label>
+
+                                                                                        <div class="row">
+
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control mb-4"
+                                                                                                    id="s-from2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group">
+                                                                                        <label>Ending In</label>
+
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-6">
+                                                                                                <select
+                                                                                                    class="form-control input-sm"
+                                                                                                    id="end-in2">
+                                                                                                    <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2020
+                                                                                                    </option>
+                                                                                                    <option>2019
+                                                                                                    </option>
+                                                                                                    <option>2018
+                                                                                                    </option>
+                                                                                                    <option>2017
+                                                                                                    </option>
+                                                                                                    <option>2016
+                                                                                                    </option>
+                                                                                                    <option>2015
+                                                                                                    </option>
+                                                                                                    <option>2014
+                                                                                                    </option>
+                                                                                                    <option>2013
+                                                                                                    </option>
+                                                                                                    <option>2012
+                                                                                                    </option>
+                                                                                                    <option>2011
+                                                                                                    </option>
+                                                                                                    <option>2010
+                                                                                                    </option>
+                                                                                                    <option>2009
+                                                                                                    </option>
+                                                                                                    <option>2008
+                                                                                                    </option>
+                                                                                                    <option>2007
+                                                                                                    </option>
+                                                                                                    <option>2006
+                                                                                                    </option>
+                                                                                                    <option>2005
+                                                                                                    </option>
+                                                                                                    <option>2004
+                                                                                                    </option>
+                                                                                                    <option>2003
+                                                                                                    </option>
+                                                                                                    <option>2002
+                                                                                                    </option>
+                                                                                                    <option>2001
+                                                                                                    </option>
+                                                                                                    <option>2000
+                                                                                                    </option>
+                                                                                                    <option>1999
+                                                                                                    </option>
+                                                                                                    <option>1998
+                                                                                                    </option>
+                                                                                                    <option>1997
+                                                                                                    </option>
+                                                                                                    <option>1996
+                                                                                                    </option>
+                                                                                                    <option>1995
+                                                                                                    </option>
+                                                                                                    <option>1994
+                                                                                                    </option>
+                                                                                                    <option>1993
+                                                                                                    </option>
+                                                                                                    <option>1992
+                                                                                                    </option>
+                                                                                                    <option>1991
+                                                                                                    </option>
+                                                                                                    <option>1990
+                                                                                                    </option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div id="password-field" class="field-wrapper input mb-2">
+
+
+                                            <div id="password-field" class="field-wrapper input mb-2 ml-5">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -96,9 +835,9 @@
                                                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                                                 </svg>
                                                 <input id="password" name="password" type="password" value=""
-                                                    placeholder="Password" />
+                                                    placeholder="Password" class="" style="max-width: unset;" />
                                             </div>
-                                            <div class="d-flex">
+                                            <div class="d-flex ml-5">
                                                 <svg class="" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
                                                     viewBox="0 0 24 24" fill="none">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -400,6 +1139,7 @@
         const faceRegister = document.getElementById("registerFace");
         faceRegister.addEventListener("click", (evt) => {
             evt.preventDefault();
+            evt.stopPropagation();
             document.getElementById('block-ui').click();
             startVideo();
         });
@@ -457,6 +1197,9 @@
         }
     </script>
 
+    <script src="/plugins/dropify/dropify.min.js"></script>
+    <script src="/plugins/blockui/jquery.blockUI.min.js"></script>
+    <script src="/assets/js/users/account-settings.js"></script>
     <!-- Register specific script end-->
 
 
