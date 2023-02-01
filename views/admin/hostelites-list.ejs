@@ -1688,9 +1688,6 @@
                                     <th>Father Name</th>
                                     <th>Hostel #</th>
                                     <th>Room #</th>
-                                    <th>DOB</th>
-                                    <th>Mobile #</th>
-                                    <th>email</th>
                                     <th class="dt-no-sorting">Action</th>
                                 </tr>
                             </thead>
@@ -1710,9 +1707,45 @@
                                     <td>M. Alam</td>
                                     <td>3</td>
                                     <td>322</td>
-                                    <td>3/3/2050</td>
-                                    <td>0340322----</td>
-                                    <td>alamaftab413@gmail.com</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button"
+                                                class="btn bg-white shadow-none btn-sm dropdown-toggle dropdown-toggle-split"
+                                                id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" data-reference="parent">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-more-horizontal">
+                                                    <circle cx="12" cy="12" r="1"></circle>
+                                                    <circle cx="19" cy="12" r="1"></circle>
+                                                    <circle cx="5" cy="12" r="1"></circle>
+                                                </svg>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
+                                                <a class="dropdown-item" href="/dormitory/student">Edit</a>
+                                                <a class="dropdown-item mr-2  warning confirm" href="#">Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="/dormitory/student">
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame mr-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle"
+                                                        src="/assets/img/boy.png">
+                                                </div>
+                                                <span class="d-flex justify-content-center align-items-center">
+                                                    Aftab Alam
+                                                </span>
+                                            </div>
+                                        </a></td>
+                                    <td>M. Alam</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="bg-danger text-center shadow p-2">No Allocated</div>
+                                    </td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
