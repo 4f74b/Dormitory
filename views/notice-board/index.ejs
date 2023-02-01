@@ -4,10 +4,11 @@
     <link href="/assets/css/forms/theme-checkbox-radio.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/users/account-setting.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/plugins/dropify/dropify.min.css">
+
     <!--  BEGIN CONTENT AREA  -->
-    <div id="content" class="main-content mt-5 pt-3">
-        <div class="layout-px-spacing"
-            style="background-image: url(/assets/img/notice-board.jpg); background-repeat:initial; background-size:cover;">
+    <div id="content" class="main-content mt-5 pt-3"
+        style="background-image: url(/assets/img/notice-board.jpg); background-repeat:initial; background-size:cover;">
+        <div class="layout-px-spacing">
             <div class="action-btn layout-top-spacing mb-5">
                 <button id="add-list" class="btn btn-primary  mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -191,7 +192,336 @@
 
                     <div class="task-list-section flex-wrap">
 
-                        <div data-section="s-new" class="col-md-4 mb-4" data-connect="sorting">
+                        <div data-section="s-new" class="col-lg-4 col-sm-6 col-12 col-md-5 mb-4" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header d-flex flex-column p-0">
+                                    <div class="d-flex justify-content-center">
+                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                                            viewBox="0 0 64 64" fill="red" stroke="#000000">
+                                            <line x1="8" y1="56" x2="24" y2="40" />
+                                            <path
+                                                d="m52 28 4-4-4-4-8-8-4-4-4 4a5.66 5.66 0 0 0 0 8l-8 8a11.31 11.31 0 0 0-16 0l23.94 24.12L36 52a11.36 11.36 0 0 0 0-16l8-8a5.66 5.66 0 0 0 8 0z" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="s-heading" data-listtitle="In Progress">Food Menu</h6>
+                                </div>
+
+                                <div class="connect-sorting-content ui-sortable" data-sortable="false">
+
+                                    <div data-draggable="false" class="card img-task ui-sortable-handle" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
+                                                        Following File contains updated Mess Menu</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="task-body ml-2">
+                                                <div class="task-content">
+                                                    <p class="" data-tasktext="">This menu is prone to changes
+                                                        depending on budget</p>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class=" mt-4 pr-md-4">
+                                                                <a class="dropify-wrapper has-preview"
+                                                                    href="/test.docx">
+                                                                    <div class="dropify-message"><span
+                                                                            class="file-icon"></span>
+                                                                        <p>Click to Upload or Drag n Drop</p>
+                                                                        <p class="dropify-error">Ooops, something wrong
+                                                                            appended.</p>
+                                                                    </div>
+                                                                    <div class="dropify-loader" style="display: none;">
+                                                                    </div>
+                                                                    <div class="dropify" data-default-file="/test.docx">
+                                                                    </div><button type="button" class="dropify-clear"><i
+                                                                            class="flaticon-close-fill"></i></button>
+                                                                    <div class="dropify-preview"
+                                                                        style="display: block;">
+                                                                        <span class="dropify-render"><i
+                                                                                class="dropify-font-file"></i><span
+                                                                                class="dropify-extension">docx</span></span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="task-bottom m-0">
+                                                    <div class="tb-section-1">
+                                                        <span data-taskdate="08 Aug 2020"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                                </rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg> 08 Aug, 2020</span>
+                                                    </div>
+                                                    <div class="tb-section-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-edit-2 s-task-edit">
+                                                            <path
+                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-trash-2 s-task-delete list-delete"
+                                                            href="javascript:void(0);">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                                        </svg>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div data-section="s-new" class="col-lg-4 col-sm-6 col-12 col-md-5 mb-4" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header d-flex flex-column p-0">
+                                    <div class="d-flex justify-content-center">
+                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                                            viewBox="0 0 64 64" fill="red" stroke="#000000">
+                                            <line x1="8" y1="56" x2="24" y2="40" />
+                                            <path
+                                                d="m52 28 4-4-4-4-8-8-4-4-4 4a5.66 5.66 0 0 0 0 8l-8 8a11.31 11.31 0 0 0-16 0l23.94 24.12L36 52a11.36 11.36 0 0 0 0-16l8-8a5.66 5.66 0 0 0 8 0z" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="s-heading" data-listtitle="In Progress">Food Menu</h6>
+                                </div>
+
+                                <div class="connect-sorting-content ui-sortable" data-sortable="false">
+
+                                    <div data-draggable="false" class="card img-task ui-sortable-handle" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
+                                                        Following File contains updated Mess Menu</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="task-body ml-2">
+                                                <div class="task-content">
+                                                    <p class="" data-tasktext="">This menu is prone to changes
+                                                        depending on budget</p>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class=" mt-4 pr-md-4">
+                                                                <a class="dropify-wrapper has-preview"
+                                                                    href="/test.docx">
+                                                                    <div class="dropify-message"><span
+                                                                            class="file-icon"></span>
+                                                                        <p>Click to Upload or Drag n Drop</p>
+                                                                        <p class="dropify-error">Ooops, something wrong
+                                                                            appended.</p>
+                                                                    </div>
+                                                                    <div class="dropify-loader" style="display: none;">
+                                                                    </div>
+                                                                    <div class="dropify" data-default-file="/test.docx">
+                                                                    </div><button type="button" class="dropify-clear"><i
+                                                                            class="flaticon-close-fill"></i></button>
+                                                                    <div class="dropify-preview"
+                                                                        style="display: block;">
+                                                                        <span class="dropify-render"><i
+                                                                                class="dropify-font-file"></i><span
+                                                                                class="dropify-extension">docx</span></span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="task-bottom m-0">
+                                                    <div class="tb-section-1">
+                                                        <span data-taskdate="08 Aug 2020"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                                </rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg> 08 Aug, 2020</span>
+                                                    </div>
+                                                    <div class="tb-section-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-edit-2 s-task-edit">
+                                                            <path
+                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-trash-2 s-task-delete list-delete"
+                                                            href="javascript:void(0);">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                                        </svg>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div data-section="s-new" class="col-lg-4 col-sm-6 col-12 col-md-5 mb-4" data-connect="sorting">
+                            <div class="connect-sorting">
+                                <div class="task-container-header d-flex flex-column p-0">
+                                    <div class="d-flex justify-content-center">
+                                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                                            viewBox="0 0 64 64" fill="red" stroke="#000000">
+                                            <line x1="8" y1="56" x2="24" y2="40" />
+                                            <path
+                                                d="m52 28 4-4-4-4-8-8-4-4-4 4a5.66 5.66 0 0 0 0 8l-8 8a11.31 11.31 0 0 0-16 0l23.94 24.12L36 52a11.36 11.36 0 0 0 0-16l8-8a5.66 5.66 0 0 0 8 0z" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="s-heading" data-listtitle="In Progress">Food Menu</h6>
+                                </div>
+
+                                <div class="connect-sorting-content ui-sortable" data-sortable="false">
+
+                                    <div data-draggable="false" class="card img-task ui-sortable-handle" style="">
+                                        <div class="card-body">
+
+                                            <div class="task-header">
+                                                <div class="">
+                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
+                                                        Following File contains updated Mess Menu</h4>
+                                                </div>
+                                            </div>
+
+                                            <div class="task-body ml-2">
+                                                <div class="task-content">
+                                                    <p class="" data-tasktext="">This menu is prone to changes
+                                                        depending on budget</p>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class=" mt-4 pr-md-4">
+                                                                <a class="dropify-wrapper has-preview"
+                                                                    href="/test.docx">
+                                                                    <div class="dropify-message"><span
+                                                                            class="file-icon"></span>
+                                                                        <p>Click to Upload or Drag n Drop</p>
+                                                                        <p class="dropify-error">Ooops, something wrong
+                                                                            appended.</p>
+                                                                    </div>
+                                                                    <div class="dropify-loader" style="display: none;">
+                                                                    </div>
+                                                                    <div class="dropify" data-default-file="/test.docx">
+                                                                    </div><button type="button" class="dropify-clear"><i
+                                                                            class="flaticon-close-fill"></i></button>
+                                                                    <div class="dropify-preview"
+                                                                        style="display: block;">
+                                                                        <span class="dropify-render"><i
+                                                                                class="dropify-font-file"></i><span
+                                                                                class="dropify-extension">docx</span></span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="task-bottom m-0">
+                                                    <div class="tb-section-1">
+                                                        <span data-taskdate="08 Aug 2020"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-calendar">
+                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                                                                </rect>
+                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                            </svg> 08 Aug, 2020</span>
+                                                    </div>
+                                                    <div class="tb-section-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-edit-2 s-task-edit">
+                                                            <path
+                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                            </path>
+                                                        </svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-trash-2 s-task-delete list-delete"
+                                                            href="javascript:void(0);">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                                        </svg>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div data-section="s-new" class="col-lg-4 col-sm-6 col-12 col-md-5 mb-4" data-connect="sorting">
                             <div class="connect-sorting">
                                 <div class="task-container-header d-flex flex-column p-0">
                                     <div class="d-flex justify-content-center">
