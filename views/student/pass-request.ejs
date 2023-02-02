@@ -12,33 +12,14 @@
 
                     <div class="user-profile layout-spacing">
                         <div class="widget-content widget-content-area">
-                            <form class="needs-validation" novalidate action="javascript:void(0);">
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-4">
-                                        <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control" id="fullName" placeholder="Full name"
-                                            value="" required>
-                                        <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <label for="username">Username</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="username" placeholder="Username"
-                                                aria-describedby="inputGroupPrepend" required>
-                                            <div class="invalid-feedback">
-                                                Please enter your username.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <form method="post" class="needs-validation" novalidate
+                                action="/dormitory/student/post-pass-request">
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Reason of pass</span>
                                     </div>
-                                    <textarea class="form-control" aria-label="With textarea" id="passReason"
-                                        required></textarea>
+                                    <textarea name="passReason" class="form-control" aria-label="With textarea"
+                                        id="passReason" required></textarea>
                                     <div class="invalid-feedback">
                                         Please provide reason of pass.
                                     </div>
@@ -47,15 +28,16 @@
                                     <div class="d-flex">
                                         <div class="n-chk">
                                             <label class="new-control new-radio radio-dark">
-                                                <input type="radio" class="new-control-input" name="custom-radio-1"
-                                                    checked>
+                                                <input type="radio" class="new-control-input" value="night"
+                                                    name="passType" checked>
                                                 <span class="new-control-indicator"></span>Night pass
                                             </label>
                                         </div>
 
                                         <div class="n-chk">
                                             <label class="new-control new-radio radio-primary">
-                                                <input type="radio" class="new-control-input" name="custom-radio-1">
+                                                <input type="radio" class="new-control-input" value="day"
+                                                    name="passType">
                                                 <span class="new-control-indicator"></span>Day pass
                                             </label>
                                         </div>
