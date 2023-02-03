@@ -60,15 +60,9 @@
         //document.getElementById('test').innerHTML = document.getElementById('complaint').value;
         //console.dir(document.getElementById('complaint').value)
 
-        $(document).ready(function () {
-            $("#theform").on("submit", function (evt) {
-                evt.stopPropagation();
-                evt.preventDefault();
-                console.log('helllo');
-                var hvalue = $('#editor-container').html();
-                $(this).append("<textarea name='content' style='display:none'>" + hvalue + "</textarea>");
-            });
+        document.getElementById('theForm').addEventListener('submit', (evt) => {
+            evt.stopPropagation();
+            document.getElementById('complaint').value = document.querySelector('.ql-editor').innerHTML
         });
-        console.log(document.getElementById('theForm'))
 
     </script>
