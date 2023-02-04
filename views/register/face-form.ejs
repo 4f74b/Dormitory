@@ -869,7 +869,7 @@
 
 
 
-                                            <div id="password-field" class="field-wrapper input mb-2 ml-5">
+                                            <div id="password-field" class="field-wrapper input mb-2 ml-5 d-none">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -911,7 +911,9 @@
 
                                             <div class="d-sm-flex justify-content-end">
                                                 <div class="field-wrapper">
-                                                    <button type="submit" class="btn btn-info" value="" id="submit">
+                                                    <button type="button" class="btn btn-success mb-2 mr-2"
+                                                        data-toggle="modal" data-target="#exampleModalCenter"
+                                                        id="generatePass">
                                                         Register
                                                     </button>
                                                 </div>
@@ -924,9 +926,45 @@
                     </div>
                 </div>
 
+
+                <div class="text-center">
+                    <!-- Button trigger modal -->
+                </div>
+
+                <!-- Show password Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Username And Auto generated
+                                    Password</h5>
+                            </div>
+                            <div class="modal-body">
+                                <h4 class="modal-heading mb-4 mt-2">Student must note the following username and
+                                    password</h4>
+                                <h3 class="modal-heading mb-4 mt-2">Username: <span id="usernameField"></span></h3>
+                                <h3 class="modal-heading mb-4 mt-2">Password: <span id="passwordField"></span></h3>
+                                <h6 class="" style="color: red;">Note:</h6>
+                                <p class="modal-text">The student is required to note his/her username and the auto
+                                    generated
+                                    Password. He/She can change the password later on by logging on to the website.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn" data-dismiss="modal"><i class="flaticon-cancel-12"></i>
+                                    Discard</button>
+                                <button type="submit" class="btn btn-info" value="" id="submit">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <button class="mr-2 btn btn-primary message d-none" data-toggle="modal" data-target="#exampleModal"
                     id="block-ui">Modal</button>
 
+                <!-- Face registration modal -->
                 <div class="modal fade text-left " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     style="display: none;" aria-modal="false" role="dialog">
                     <div class="modal-dialog m-0 d-flex justify-content-center" role="document"
@@ -952,6 +990,8 @@
                             </div>
 
                         </div>
+
+                        <!-- Face Register Modal -->
                         <div class="modal-content card component-card_9 w-25">
                             <div class="text-center mt-2">
                                 <h4 class="">Welcome</h4>
@@ -1009,6 +1049,7 @@
 
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -1229,8 +1270,6 @@
         document.querySelector('form').addEventListener('submit', fillFormDetections);
         //Add data to form before submitting
         async function fillFormDetections(evt) {
-            //evt.preventDefault();
-            //evt.stopPropagation();
             let descriptors = [];
             allDetections.map((value, i, arr) => {
                 value.map((v, i, arr) => {
@@ -1238,13 +1277,6 @@
                 })
             })
             document.getElementById('descriptions').value = JSON.stringify(descriptors);
-            //const form = new FormData(document.querySelector('form'));
-            //form.append('email', document.getElementById('email').value);
-            //const res = await fetch("http://localhost:3000/post-face", {
-            //    method: "POST",
-            //    body: form,
-            //});
-            console.log(form);
         }
     </script>
 
@@ -1269,6 +1301,16 @@
                 }
             });
         });
+
+        document.getElementById('generatePass').addEventListener('click', (evt) => {
+            document.getElementById('password').value = Math.floor(Math.random() * 1000000);
+            document.getElementById('usernameField').innerHTML = document.getElementById('username').value;
+            document.getElementById('passwordField').innerHTML = document.getElementById('password').value;
+
+            document.getElementById('submit').addEventListener('click', (evt) => {
+                document.forms[0].submit();
+            })
+        })
 
 
         //==================Test====================//
