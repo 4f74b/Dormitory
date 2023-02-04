@@ -27,86 +27,106 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><a href="/dormitory/student">
-                                            <div class="d-flex">
-                                                <div class="usr-img-frame mr-2 rounded-circle">
-                                                    <img alt="avatar" class="img-fluid rounded-circle"
-                                                        src="/assets/img/boy.png">
+                                <% for (hostellite of hostelliteList){ %>
+                                    <tr>
+                                        <td><a href="/dormitory/student/<%= hostellite.username  %> ">
+                                                <div class="d-flex">
+                                                    <div class="usr-img-frame mr-2 rounded-circle">
+                                                        <% if (hostellite.profileImage){ %>
+                                                            <img alt="avatar" class="img-fluid rounded-circle"
+                                                                src="/hostel-files/hostellite-profile-images/<%= hostellite.profileImage %> ">
+                                                            <% }else{ %>
+                                                                <img alt="avatar" class="img-fluid rounded-circle"
+                                                                    src="/assets/img/boy.png">
+                                                                <% } %>
+                                                    </div>
+                                                    <span class="d-flex justify-content-center align-items-center">
+                                                        <%= hostellite.fullName %>
+                                                    </span>
                                                 </div>
-                                                <span class="d-flex justify-content-center align-items-center">
-                                                    Aftab Alam
-                                                </span>
-                                            </div>
-                                        </a></td>
-                                    <td>M. Alam</td>
-                                    <td>3</td>
-                                    <td>322</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn bg-white shadow-none btn-sm dropdown-toggle dropdown-toggle-split"
-                                                id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" data-reference="parent">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                <a class="dropdown-item" href="/dormitory/student">Edit</a>
-                                                <a class="dropdown-item mr-2  warning confirm" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="/dormitory/student">
-                                            <div class="d-flex">
-                                                <div class="usr-img-frame mr-2 rounded-circle">
-                                                    <img alt="avatar" class="img-fluid rounded-circle"
-                                                        src="/assets/img/boy.png">
+                                            </a></td>
+                                        <td>
+                                            <%= hostellite.fatherName %>
+                                        </td>
+                                        <td>
+                                            <%= hostellite.hostelInfo.hostelNo %>
+                                        </td>
+                                        <td>
+                                            <%= hostellite.hostelInfo.roomNo %>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn bg-white shadow-none btn-sm dropdown-toggle dropdown-toggle-split"
+                                                    id="dropdownMenuReference1" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                                                    <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-more-horizontal">
+                                                        <circle cx="12" cy="12" r="1"></circle>
+                                                        <circle cx="19" cy="12" r="1"></circle>
+                                                        <circle cx="5" cy="12" r="1"></circle>
+                                                    </svg>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
+                                                    <a class="dropdown-item"
+                                                        href="/dormitory/student/edit/<%= hostellite.username %> ">Edit</a>
+                                                    <a class="dropdown-item mr-2  warning confirm" href="#">Delete</a>
                                                 </div>
-                                                <span class="d-flex justify-content-center align-items-center">
-                                                    Aftab Alam
-                                                </span>
                                             </div>
-                                        </a></td>
-                                    <td>M. Alam</td>
-                                    <td>3</td>
-                                    <td>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-dark mb-2 mr-2" data-toggle="modal"
-                                            data-target="#loginModal">
-                                            Allocate Room
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn bg-white shadow-none btn-sm dropdown-toggle dropdown-toggle-split"
-                                                id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false" data-reference="parent">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-more-horizontal">
-                                                    <circle cx="12" cy="12" r="1"></circle>
-                                                    <circle cx="19" cy="12" r="1"></circle>
-                                                    <circle cx="5" cy="12" r="1"></circle>
-                                                </svg>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
-                                                <a class="dropdown-item" href="/dormitory/student">Edit</a>
-                                                <a class="dropdown-item mr-2  warning confirm" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+
+                                    <% } %>
+
+
+                                        <tr>
+                                            <td><a href="/dormitory/student">
+                                                    <div class="d-flex">
+                                                        <div class="usr-img-frame mr-2 rounded-circle">
+                                                            <img alt="avatar" class="img-fluid rounded-circle"
+                                                                src="/assets/img/boy.png">
+                                                        </div>
+                                                        <span class="d-flex justify-content-center align-items-center">
+                                                            Aftab Alam
+                                                        </span>
+                                                    </div>
+                                                </a></td>
+                                            <td>M. Alam</td>
+                                            <td>3</td>
+                                            <td>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-dark mb-2 mr-2" data-toggle="modal"
+                                                    data-target="#loginModal">
+                                                    Allocate Room
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button"
+                                                        class="btn bg-white shadow-none btn-sm dropdown-toggle dropdown-toggle-split"
+                                                        id="dropdownMenuReference1" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false"
+                                                        data-reference="parent">
+                                                        <svg xmlns="" width="24" height="24" viewBox="0 0 24 24"
+                                                            fill="none" stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"
+                                                            class="feather feather-more-horizontal">
+                                                            <circle cx="12" cy="12" r="1"></circle>
+                                                            <circle cx="19" cy="12" r="1"></circle>
+                                                            <circle cx="5" cy="12" r="1"></circle>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
+                                                        <a class="dropdown-item" href="/dormitory/student">Edit</a>
+                                                        <a class="dropdown-item mr-2  warning confirm"
+                                                            href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+
                             </tbody>
                         </table>
                     </div>
@@ -122,9 +142,9 @@
                     <div class="modal-header" id="loginModalLabel">
                         <h4 class="modal-title">Allocate Room</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><svg
-                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                                aria-hidden="true" xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-x">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg></button>
@@ -160,9 +180,9 @@
                     rights reserved.</p>
             </div>
             <div class="footer-section f-section-2">
-                <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-heart">
+                <p class="">Coded with <svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-heart">
                         <path
                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                         </path>
@@ -227,9 +247,9 @@
                 ]
             },
             "oLanguage": {
-                "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                "oPaginate": { "sPrevious": '<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
                 "sInfo": "Showing page _PAGE_ of _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                "sSearch": '<svg xmlns="" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                 "sSearchPlaceholder": "Search...",
                 "sLengthMenu": "Results :  _MENU_",
             },
