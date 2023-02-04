@@ -11,7 +11,7 @@
                     <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll"
                         data-offset="-100">
                         <div class="row">
-                            <form action="/dormitory/student/<%= hostelliteInfo.username %>" method="post">
+                            <form action="/dormitory/student/<%= hostelliteInfo.username %>/edit" method="post" enctype="multipart/form-data">
                             <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
                                 <div id="general-info" class="section general-info">
                                     <div class="info">
@@ -19,9 +19,9 @@
                                         <div class="row">
                                             <div class="col-lg-11 mx-auto">
                                                 <div class="row">
-                                                    <div class="col-xl-2 col-lg-12 col-md-4">
+                                                    <div class="col-xl-2 col-lg-12 col-md-4 mb-5">
                                                         <div class="upload mt-4 pr-md-4">
-                                                            <input type="file" id="input-file-max-fs" class="dropify"
+                                                            <input accept="image/*" name="profileImage" type="file" id="input-file-max-fs" class="dropify"
                                                                 data-default-file="/hostel-files/hostellite-profile-images/<%= hostelliteInfo.profileImage %>" data-max-file-size="2M" />
                                                             <p class="mt-2"><i class="flaticon-cloud-upload mr-1"></i>
                                                                 Upload Picture</p>
@@ -33,7 +33,7 @@
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
                                                                         <label for="fullName">Full Name</label>
-                                                                        <input type="text" class="form-control mb-4"
+                                                                        <input name="fullName" type="text" class="form-control mb-4"
                                                                             id="fullName" placeholder="Full Name"
                                                                             value="<%= hostelliteInfo.fullName %> ">
                                                                     </div>
@@ -42,7 +42,7 @@
                                                                     <label class="dob-input">Date of Birth</label>
                                                                     <div class="d-sm-flex d-block">
                                                                         <div class="form-group mr-1">
-                                                                            <select data-dayOfBirth="<%= hostelliteInfo.DOB[0] %>" class="form-control"
+                                                                            <select name="DOB[]" data-dayOfBirth="<%= hostelliteInfo.DOB[0] %>" class="form-control"
                                                                                 id="dayOfBirth">
                                                                                 <option>Day</option>
                                                                                 <option>1</option>
@@ -78,7 +78,7 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group mr-1">
-                                                                            <select id="monthOfBirth" data-monthOfBirth="<%= hostelliteInfo.DOB[1] %>" class="form-control" id="month">
+                                                                            <select name="DOB[]" id="monthOfBirth" data-monthOfBirth="<%= hostelliteInfo.DOB[1] %>" class="form-control" id="month">
                                                                                 <option>Month</option>
                                                                                 <option selected="">Jan</option>
                                                                                 <option>Feb</option>
@@ -95,7 +95,7 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group mr-1">
-                                                                            <select id="yearOfBirth" data-yearOfBirth="<%= hostelliteInfo.DOB[2] %>" class="form-control" id="year">
+                                                                            <select name="DOB[]" id="yearOfBirth" data-yearOfBirth="<%= hostelliteInfo.DOB[2] %>" class="form-control" id="year">
                                                                                 <option>Year</option>
                                                                                 <option>2018</option>
                                                                                 <option>2017</option>
@@ -140,6 +140,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+
+                                                                
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="password">Update Password</label>
+                                                                        <input name="password" type="password" class="form-control mb-4"
+                                                                            id="password" placeholder="Update Password"
+                                                                            value="">
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -158,10 +168,27 @@
                                         <div class="row">
                                             <div class="col-md-11 mx-auto">
                                                 <div class="row">
+                                                    
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="email">Email</label>
+                                                            <input name="contact[email]" type="text" class="form-control mb-4" id="email"
+                                                                placeholder="Write your email here" value="<%= hostelliteInfo.contact.email %>">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="phone">Phone</label>
+                                                            <input name="contact[phoneNo]" type="text" class="form-control mb-4" id="phone"
+                                                                placeholder="Write your phone number here" value="<%= hostelliteInfo.contact.phoneNo %>">
+                                                        </div>
+                                                    </div>
+
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="country">Country</label>
-                                                            <select class="form-control" id="country">
+                                                            <select name="contact[address][country]" class="form-control" id="country">
                                                                 <option>All Countries</option>
                                                                 <option <%= (hostelliteInfo.contact.address.country == 'Pakistan') ? 'selected' : ''%> >Pakistan</option>
                                                                 <option <%= (hostelliteInfo.contact.address.country == 'Afghanistan') ? 'selected' : ''%>>Afghanistan</option>
@@ -170,24 +197,10 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="address">Address(<small>province,
-                                                                    district, street</small>)</label>
-                                                            <input type="text" class="form-control mb-4" id="address"
+                                                            <label for="address">Address(<small>street/town,
+                                                                    district, province</small>)</label>
+                                                            <input name="contact[address][streetAddress]" type="text" class="form-control mb-4" id="address"
                                                                 placeholder="Address" value="<%= hostelliteInfo.contact.address.streetAddress %>">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="phone">Phone</label>
-                                                            <input type="text" class="form-control mb-4" id="phone"
-                                                                placeholder="Write your phone number here" value="<%= hostelliteInfo.contact.phoneNo %>">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="email">Email</label>
-                                                            <input type="text" class="form-control mb-4" id="email"
-                                                                placeholder="Write your email here" value="<%= hostelliteInfo.contact.email %>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -215,7 +228,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="degree1">Enter your School Name</label>
-                                                                <input type="text" class="form-control mb-4"
+                                                                <input name="education[school][name]" type="text" class="form-control mb-4"
                                                                     id="degree1" placeholder="Add your school name here"
                                                                     value="<%= hostelliteInfo.education.school.name %>">
                                                             </div>
@@ -229,7 +242,7 @@
                                                                         <div class="row">
 
                                                                             <div class="col-md-6">
-                                                                                <select data-schoolStart="<%= hostelliteInfo.education.school.start %>" class="form-control mb-4"
+                                                                                <select name="education[school][start]" data-schoolStart="<%= hostelliteInfo.education.school.start %>" class="form-control mb-4"
                                                                                     id="schoolStart">
                                                                                     <option>Year</option>
                                                                                     <option>2020</option>
@@ -277,7 +290,7 @@
 
                                                                         <div class="row">
                                                                             <div class="col-md-6">
-                                                                                <select data-schoolEnd="<%= hostelliteInfo.education.school.end %>" class="form-control input-sm"
+                                                                                <select name="education[school][end]" data-schoolEnd="<%= hostelliteInfo.education.school.end %>" class="form-control input-sm"
                                                                                     id="schoolEnd">
                                                                                     <option>Year</option>
                                                                                     <option>2020</option>
@@ -336,7 +349,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="degree1">Enter Your Collage Name</label>
-                                                                <input type="text" class="form-control mb-4"
+                                                                <input name="education[college][name]" type="text" class="form-control mb-4"
                                                                     id="degree1"
                                                                     placeholder="Add your college name here" value="<%= hostelliteInfo.education.college.name %>">
                                                             </div>
@@ -350,7 +363,7 @@
                                                                         <div class="row">
 
                                                                             <div class="col-md-6">
-                                                                                <select data-collegeStart="<%= hostelliteInfo.education.college.start %>" class="form-control mb-4"
+                                                                                <select name="education[college][start]" data-collegeStart="<%= hostelliteInfo.education.college.start %>" class="form-control mb-4"
                                                                                     id="collegeStart">
                                                                                     <option>Year</option>
                                                                                     <option>2022</option>
@@ -400,7 +413,7 @@
 
                                                                         <div class="row">
                                                                             <div class="col-md-6">
-                                                                                <select data-collegeEnd="<%= hostelliteInfo.education.college.end %>" class="form-control input-sm"
+                                                                                <select name="education[college][end]" data-collegeEnd="<%= hostelliteInfo.education.college.end %>" class="form-control input-sm"
                                                                                     id="collegeEnd">
                                                                                     <option>Year</option>
                                                                                     <option>2020</option>
@@ -459,7 +472,7 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="degree1">Enter your degree name</label>
-                                                                <input type="text" class="form-control mb-4" id=""
+                                                                <input name="education[degree][name]" type="text" class="form-control mb-4" id=""
                                                                     placeholder="Enter the name of your degree"
                                                                     value="<%= hostelliteInfo.education.degree.name %>">
                                                             </div>
@@ -473,7 +486,7 @@
                                                                         <div class="row">
 
                                                                             <div class="col-md-6">
-                                                                                <select data-degreeStart="<%= hostelliteInfo.education.degree.start %>" class="form-control mb-4"
+                                                                                <select name="education[degree][start]" data-degreeStart="<%= hostelliteInfo.education.degree.start %>" class="form-control mb-4"
                                                                                     id="degreeStart">
                                                                                     <option>Year</option>
                                                                                     <option>2020</option>
@@ -521,7 +534,7 @@
 
                                                                         <div class="row">
                                                                             <div class="col-md-6">
-                                                                                <select data-degreeEnd="<%= hostelliteInfo.education.degree.end %>" class="form-control input-sm"
+                                                                                <select name="education[degree][end]" data-degreeEnd="<%= hostelliteInfo.education.degree.end %>" class="form-control input-sm"
                                                                                     id="degreeEnd">
                                                                                     <option>Year</option>
                                                                                     <option>2020</option>
@@ -579,13 +592,13 @@
                                                         <div class="col-md-12">
                                                             <div class="form-group">
                                                                 <label for="degree1">Enter your Hostel Number</label>
-                                                                <input type="text" class="form-control mb-4" id=""
+                                                                <input name="hostelInfo[hostelNo]" type="text" class="form-control mb-4" id=""
                                                                     placeholder="Enter your hostel numner" value="<%= hostelliteInfo.hostelInfo.hostelNo %>">
 
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="degree1">Enter your Room Number</label>
-                                                                <input type="text" class="form-control mb-4" id=""
+                                                                <input name="hostelInfo[roomNo]" type="text" class="form-control mb-4" id=""
                                                                     placeholder="Enter your Room numner" value="<%= hostelliteInfo.hostelInfo.roomNo %>">
 
                                                             </div>
@@ -614,7 +627,7 @@
                         <div class="blockui-growl-message">
                             <i class="flaticon-double-check"></i>&nbsp; Settings Saved Successfully
                         </div>
-                        <button id="multiple-messages" class="btn btn-success">Save Changes</button>
+                        <button id="saveChanges" class="btn btn-success">Save Changes</button>
 
                     </div>
 
@@ -697,4 +710,7 @@
     </script>
 
     <script>
+        document.getElementById('saveChanges').addEventListener('click', (evt) => {
+            document.forms[0].submit();
+        })
     </script>
