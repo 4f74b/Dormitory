@@ -50,7 +50,7 @@
                                                                             d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
                                                                         </path>
                                                                     </svg>
-                                                                    <input id="s-task" type="text"
+                                                                    <input id="noticeHeading" type="text"
                                                                         placeholder="Notice Heading"
                                                                         class="form-control" name="noticeHeading">
                                                                 </div>
@@ -69,7 +69,8 @@
                                                                             points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
                                                                         </polygon>
                                                                     </svg>
-                                                                    <textarea id="s-text" placeholder="Notice Content"
+                                                                    <textarea id="noticeText"
+                                                                        placeholder="Notice Content"
                                                                         class="form-control"
                                                                         name="noticeContent"></textarea>
                                                                 </div>
@@ -78,9 +79,9 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <div class="upload mt-4 pr-md-4">
-                                                                    <input name="noticeFile" type="file"
-                                                                        id="input-file-max-fs" class="dropify"
-                                                                        data-default-file="" data-max-file-size="2M" />
+                                                                    <input name="noticeFile" type="file" id="noticeFile"
+                                                                        class="dropify" data-default-file=""
+                                                                        data-max-file-size="2M" />
                                                                     <p class="mt-2"><i
                                                                             class="flaticon-cloud-upload mr-1"></i>
                                                                         Upload File</p>
@@ -102,8 +103,9 @@
                                     <line x1="18" y1="6" x2="6" y2="18"></line>
                                     <line x1="6" y1="6" x2="18" y2="18"></line>
                                 </svg> Discard</button>
-                            <button data-btnfn="addTask" class="btn add-tsk" id="addInfoBtn">Add Information</button>
-                            <button data-btnfn="editTask" class="btn edit-tsk" style="display: none;">Save</button>
+                            <button data-noticeId="" class="btn add-tsk" id="addInfoBtn">Add Information</button>
+                            <button data-btnfn="editTask" id="saveBtn" class="btn edit-tsk"
+                                style="display: none;">Save</button>
                         </div>
                     </div>
                 </div>
@@ -199,7 +201,7 @@
 
                         <% for(let notice of noticeList){ %>
 
-                            <div data-section="s-<%= notice.noticeHeading %> "
+                            <div data-section="s-<%= notice.noticeHeading %>"
                                 class="col-lg-4 col-sm-6 col-12 col-md-5 mb-4" data-connect="sorting">
                                 <div class="connect-sorting">
                                     <div class="task-container-header d-flex flex-column p-0 mb-4">
@@ -220,7 +222,7 @@
 
                                                 <div class="task-header">
                                                     <div class="">
-                                                        <h4 class=""
+                                                        <h4 class="" id="<%= notice._id %>headingCurrentVal"
                                                             data-tasktitle="Creating a new Portfolio on Dribble">
                                                             <%= notice.noticeHeading %>
                                                         </h4>
@@ -229,15 +231,17 @@
 
                                                 <div class="task-body ml-2">
                                                     <div class="task-content">
-                                                        <p class="" data-tasktext="">
-                                                            <%= notice.noticeHeading %>
+                                                        <p class="" id="<%= notice._id %>contentCurrentVal"
+                                                            data-tasktext="">
+                                                            <%= notice.noticeContent %>
                                                         </p>
                                                         <% if (notice.file){ %>
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class=" mt-4 pr-md-4">
                                                                         <a class="dropify-wrapper has-preview"
-                                                                            href="/hostel-files/notice-board-files/<%= notice.file %>">
+                                                                            id="<%= notice._id %>noticeFile" href="/hostel-files/notice-board-files/<%=
+                                                                                notice.file %>">
                                                                             <div class="dropify"
                                                                                 data-default-file="/hostel-files/notice-board-files/<%= notice.file %>">
                                                                             </div><button type="button"
@@ -284,11 +288,12 @@
                                                             </span>
                                                         </div>
                                                         <div class="tb-section-2">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                            <svg id="<%= notice._id %>"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
                                                                 height="24" viewBox="0 0 24 24" fill="none"
                                                                 stroke="currentColor" stroke-width="2"
                                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-edit-2 s-task-edit">
+                                                                class="feather feather-edit-2 s-task-edit editBtn">
                                                                 <path
                                                                     d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
                                                                 </path>
@@ -335,10 +340,10 @@
     <!-- END MAIN CONTAINER -->
 
     <script src="/assets/js/ie11fix/fn.fix-padStart.js"></script>
-    <script src="/assets/js/apps/scrumboard.js"></script>
     <script src="/plugins/dropify/dropify.min.js"></script>
     <script src="/plugins/blockui/jquery.blockUI.min.js"></script>
     <script src="/assets/js/users/account-settings.js"></script>
+
 
     <script>
         document.querySelector('.add-tsk').addEventListener('click', function (evt) {
@@ -352,3 +357,26 @@
             document.forms[0].submit();
         })
     </script>
+
+    <!-- Fill edit form with previous values -->
+    <script>
+        for (editBtn of document.querySelectorAll('.editBtn')) {
+            editBtn.addEventListener('click', function (evt) {
+                document.getElementById('addInfoBtn').style.display = 'none';
+                document.getElementById('noticeHeading').value = document.getElementById(this.id + 'headingCurrentVal').innerText;
+                document.getElementById('noticeText').value = document.getElementById(this.id + 'contentCurrentVal').innerText;
+                document.getElementById('saveBtn').setAttribute('data-noticeId', this.id);
+            })
+        }
+    </script>
+
+    <!-- Submit edit Form -->
+    <script>
+        document.getElementById('saveBtn').addEventListener('click', function (evt) {
+            evt.stopPropagation();
+            evt.preventDefault();
+            document.forms[0].action = '/dormitory/notice-board/' + this.getAttribute('data-noticeId') + "/edit";
+            document.forms[0].submit();
+        })
+    </script>
+    <script src="/assets/js/apps/scrumboard.js"></script>

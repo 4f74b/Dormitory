@@ -230,7 +230,6 @@
             }).then(async function (result) {
                 // if the choice is delete, then do the followin
                 if (result.value) {
-                    swal("Deleted!", "Your file has been deleted.", "success");
                     const form = new FormData();
                     form.append('Aftab', username);
 
@@ -238,8 +237,12 @@
                     let res = await fetch("/dormitory/student/" + username + "/delete", {
                         method: "POST",
                     })
-                    res = await res.json();
-                    document.getElementById(username).remove();
+                    res.json().then((data) => {
+                        console.log(data);
+                        swal("Deleted!", "Your file has been deleted.", "success");
+                        document.getElementById(username).remove();
+
+                    });
                 }
             });
         });
