@@ -1280,7 +1280,18 @@
             document.getElementById('nextPro').classList.add('d-none');
         }
 
-        document.querySelector('form').addEventListener('submit', fillFormDetections);
+
+        // Generate Random Password
+        document.getElementById('generatePass').addEventListener('click', (evt) => {
+            document.getElementById('password').value = Math.floor(Math.random() * 1000000);
+            document.getElementById('usernameField').innerHTML = document.getElementById('username').value;
+            document.getElementById('passwordField').innerHTML = document.getElementById('password').value;
+
+            document.getElementById('submit').addEventListener('click', (evt) => {
+                fillFormDetections();
+                document.forms[0].submit();
+            })
+        })
         //Add data to form before submitting
         async function fillFormDetections(evt) {
             let descriptors = [];
@@ -1289,6 +1300,7 @@
                     descriptors.push(v[0].descriptor);
                 })
             })
+            console.log("length of detection: " + descriptors.length);
             document.getElementById('descriptions').value = JSON.stringify(descriptors);
         }
     </script>
@@ -1315,15 +1327,6 @@
             });
         });
 
-        document.getElementById('generatePass').addEventListener('click', (evt) => {
-            document.getElementById('password').value = Math.floor(Math.random() * 1000000);
-            document.getElementById('usernameField').innerHTML = document.getElementById('username').value;
-            document.getElementById('passwordField').innerHTML = document.getElementById('password').value;
-
-            document.getElementById('submit').addEventListener('click', (evt) => {
-                document.forms[0].submit();
-            })
-        })
 
 
         //==================Test====================//
