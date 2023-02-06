@@ -287,7 +287,11 @@
                                                                     <%= notice.Date.getDate()
                                                                         +"/"+notice.Date.getMonth()+"/"+notice.Date.getFullYear()+"("%>
                                                                         <small>
-                                                                            <%= notice.Date.getHours()+":"+notice.Date.getMinutes()
+                                                                            <%= ((notice.Date.getHours()>
+                                                                                12) ?
+                                                                                (notice.Date.getHours()
+                                                                                -12) :
+                                                                                notice.Date.getHours())+":"+notice.Date.getMinutes()
                                                                                 + ((notice.Date.getHours()> 12) ? " PM"
                                                                                 :
                                                                                 " AM")
