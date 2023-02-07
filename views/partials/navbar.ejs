@@ -35,9 +35,11 @@
             style="margin-left:auto;">Current
             Page Name will appear here
         </div>
-        <a href="#" class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center"
+        <a href="/dormitory/student/login"
+            class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center"
             style="margin-left:auto;">login/logout
         </a>
+
     </header>
 </div>
 <!--  END NAVBAR  -->
@@ -56,21 +58,23 @@
 
             <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
                 <li class="menu mt-5">
-                    <a href="/dormitory/student" aria-expanded="false" data-active="true"
-                        class="dropdown-toggle d-flex align-items-center justify-content-center">
+                    <div aria-expanded="false" data-active="true"
+                        class="dropdown-toggle d-flex align-items-center justify-content-center" style="cursor:unset;">
                         <div class="">
                             <div class="media d-flex flex-column align-items-center justify-content-center">
-                                <div class="w-img mb-2">
+                                <a href="/dormitory/student" class="w-img mb-2">
                                     <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                </div>
+                                </a>
                                 <div class="media-body d-flex flex-column align-items-center justify-content-center">
                                     <h6>Aftab Alam</h6>
-                                    <p class="meta-date-time">Monday, Nov 18</p>
+                                    <a href="/dormitory/student/logout"
+                                        class="btn btn-primary meta-date-time">Logout</a>
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </li>
+
                 <li class="menu">
                     <a href="/dormitory/notice-board" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
