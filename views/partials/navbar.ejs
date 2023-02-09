@@ -35,10 +35,13 @@
             style="margin-left:auto;">Current
             Page Name will appear here
         </div>
-        <a href="/dormitory/student/login"
-            class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center"
-            style="margin-left:auto;">login/logout
-        </a>
+        <% if (!currentUser){ %>
+            <a href="/dormitory/student/login"
+                class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center btn btn-outline-dark"
+                style="margin-left:auto;">Login
+            </a>
+
+            <% } %>
 
     </header>
 </div>
@@ -56,167 +59,306 @@
         <nav id="sidebar">
             <div class="shadow-bottom"></div>
 
-            <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
-                <li class="menu mt-5">
-                    <div aria-expanded="false" data-active="true"
-                        class="dropdown-toggle d-flex align-items-center justify-content-center" style="cursor:unset;">
-                        <div class="">
-                            <div class="media d-flex flex-column align-items-center justify-content-center">
-                                <a href="/dormitory/student" class="w-img mb-2">
-                                    <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                </a>
-                                <div class="media-body d-flex flex-column align-items-center justify-content-center">
-                                    <h6>Aftab Alam</h6>
-                                    <a href="/dormitory/student/logout"
-                                        class="btn btn-primary meta-date-time">Logout</a>
+
+            <% if (currentUser && currentUser.role=='student' ){ %>
+                <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
+                    <% if (currentUser){ %>
+                        <li class="menu mt-5 mb-2">
+                            <div aria-expanded="false" data-active="true"
+                                class="d-flex align-items-center justify-content-center mt-4" style="cursor:unset;">
+                                <div class="">
+                                    <div class="media d-flex flex-column align-items-center justify-content-center">
+                                        <a href="/dormitory/student/<%= currentUser.username %>"
+                                            class="w-img mb-2 outline-badge-primary rounded">
+                                            <% if (currentUser.profileImage){ %>
+                                                <img src="/hostel-files/hostellite-profile-images/<%= currentUser.profileImage %>"
+                                                    alt="avatar">
+                                                <% }else{ %>
+                                                    <img src="/assets/img/profile-6.jpg" alt="avatar">
+                                                    <% } %>
+                                        </a>
+                                        <div
+                                            class="media-body d-flex flex-column align-items-center justify-content-center">
+                                            <h6>
+                                                <%= currentUser.username %>
+                                            </h6>
+                                            <a href="/dormitory/student/logout"
+                                                class="btn btn-outline-danger btn-rounded mr-1 meta-date-time mb-1">Logout</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
+                        </li>
+                        <% } %>
 
-                <li class="menu">
-                    <a href="/dormitory/notice-board" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Notice Board</span>
-                        </div>
-                    </a>
-                </li>
+                            <li class="menu">
+                                <a href="/dormitory/student/notice-board" aria-expanded="false" class="dropdown-toggle">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-target">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <circle cx="12" cy="12" r="6"></circle>
+                                            <circle cx="12" cy="12" r="2"></circle>
+                                        </svg>
+                                        <span>Notice Board</span>
+                                    </div>
+                                </a>
+                            </li>
 
-                <li class="menu">
-                    <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-home">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                            </svg>
-                            <span>Pass Request</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="submenu list-unstyled collapse" id="dashboard" data-parent="#accordionExample" style="">
-                        <li class="">
-                            <a href="/dormitory/student/post-pass-request"> Send Pass Request </a>
-                        </li>
-                        <li class="">
-                            <a href="/dormitory/pass-request-status"> Pass request Status </a>
-                        </li>
-                        <li class="">
-                            <a href="/dormitory/admin/pass-requests">
-                                Pass Requests
-                            </a>
-                        </li>
+                            <li class="menu">
+                                <a href="#dashboard" data-toggle="collapse" aria-expanded="false"
+                                    class="dropdown-toggle collapsed">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                        <span>Pass Request</span>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-chevron-right">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <ul class="submenu list-unstyled collapse" id="dashboard"
+                                    data-parent="#accordionExample" style="">
+                                    <li class="">
+                                        <a href="/dormitory/student/post-pass-request"> Send Pass Request </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/dormitory/student/pass-request-status"> Pass request Status </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="menu">
+                                <a href="#components" data-toggle="collapse" aria-expanded="false"
+                                    class="dropdown-toggle">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-box">
+                                            <path
+                                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                            </path>
+                                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                        </svg>
+                                        <span>Complaint</span>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-chevron-right">
+                                            <polyline points="9 18 15 12 9 6"></polyline>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <ul class="collapse submenu list-unstyled" id="components"
+                                    data-parent="#accordionExample">
+                                    <li>
+                                        <a href="/dormitory/student/post-complaint"> Write Complaint </a>
+                                    </li>
+                                    <li>
+                                        <a href="/dormitory/complaint-log"> Complaint Log </a>
+                                    </li>
+                                </ul>
+                            </li>
+                </ul>
+
+                <% } else{ %>
+
+                    <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
+                        <% if (currentUser){ %>
+                            <li class="menu mt-5">
+                                <div aria-expanded="false" data-active="true"
+                                    class="d-flex align-items-center justify-content-center mt-4" style="cursor:unset;">
+                                    <div class="">
+                                        <div class="media d-flex flex-column align-items-center justify-content-center">
+                                            <a href="/dormitory/student/<%= currentUser.username %>" class="w-img mb-2">
+                                                <% if (currentUser.profileImage){ %>
+                                                    <img src="/hostel-files/hostellite-profile-images/<%= currentUser.profileImage %>"
+                                                        alt="avatar">
+                                                    <% }else{ %>
+                                                        <img src="/assets/img/profile-6.jpg" alt="avatar">
+                                                        <% } %>
+                                            </a>
+                                            <div
+                                                class="media-body d-flex flex-column align-items-center justify-content-center">
+                                                <h6>
+                                                    <%= currentUser.username %>
+                                                </h6>
+                                                <a href="/dormitory/student/logout"
+                                                    class="btn btn-outline-primary btn-rounded mr-1 meta-date-time">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <% } %>
+
+                                <li class="menu mt-5">
+                                    <a href="/dormitory/admin/notice-board" aria-expanded="false"
+                                        class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Notice Board</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="menu">
+                                    <a href="/dormitory/admin/pass-requests" aria-expanded="false"
+                                        class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>View Pass Requests</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                                <li class="menu">
+                                    <a href="/dormitory/admin/attendence-list" aria-expanded="false"
+                                        class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Attendence List</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="menu">
+                                    <a href="#" aria-expanded="false" class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>View Complaints</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="menu">
+                                    <a href="/dormitory/admin/hostellites-list" aria-expanded="false"
+                                        class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Hostelites List</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                                <li class="menu">
+                                    <a href="/surveillance" aria-expanded="false" class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Surveillance</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="menu">
+                                    <a href="/dormitory/admin/add-hostellite" aria-expanded="false"
+                                        class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Add Student</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="menu">
+                                    <a href="/dormitory/admin/add-admin" aria-expanded="false" class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Add Admin</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="menu">
+                                    <a href="/dormitory/admin/login" aria-expanded="false" class="dropdown-toggle">
+                                        <div class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-target">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <circle cx="12" cy="12" r="6"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                            </svg>
+                                            <span>Admin Login</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+
                     </ul>
-                </li>
-                <li class="menu">
-                    <a href="/dormitory/admin/attendence-list" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Attendence List</span>
-                        </div>
-                    </a>
-                </li>
-
-                <li class="menu">
-                    <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-box">
-                                <path
-                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                                </path>
-                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                            </svg>
-                            <span>Complaint</span>
-                        </div>
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-chevron-right">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
-                        <li>
-                            <a href="/dormitory/student/post-complaint"> Write Complaint </a>
-                        </li>
-                        <li>
-                            <a href="/dormitory/complaint-log"> Complaint Log </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu">
-                    <a href="/dormitory/admin/hostellites-list" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Hostelites List</span>
-                        </div>
-                    </a>
-                </li>
-
-
-                <li class="menu">
-                    <a href="/surveillance" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Surveillance</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="menu">
-                    <a href="/post-face" aria-expanded="false" class="dropdown-toggle">
-                        <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-target">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <circle cx="12" cy="12" r="6"></circle>
-                                <circle cx="12" cy="12" r="2"></circle>
-                            </svg>
-                            <span>Add Student</span>
-                        </div>
-                    </a>
-                </li>
-
-
-            </ul>
+                    <% } %>
 
         </nav>
 
