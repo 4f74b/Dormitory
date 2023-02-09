@@ -35,13 +35,18 @@
             style="margin-left:auto;">Current
             Page Name will appear here
         </div>
-        <% if (!currentUser){ %>
+        <% if (!currentUser && currentUrl.split('/')[2] !='admin' ){ %>
             <a href="/dormitory/student/login"
-                class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center btn btn-outline-dark"
+                class=" ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center btn btn-outline-dark"
                 style="margin-left:auto;">Login
             </a>
 
-            <% } %>
+            <% }else if (!currentUser){ %>
+                <a href="/dormitory/admin/login"
+                    class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-none justify-content-center align-items-center btn btn-outline-dark"
+                    style="margin-left:auto;">Login
+                </a>
+                <% } %>
 
     </header>
 </div>
@@ -169,7 +174,7 @@
                                         <a href="/dormitory/student/post-complaint"> Write Complaint </a>
                                     </li>
                                     <li>
-                                        <a href="/dormitory/complaint-log"> Complaint Log </a>
+                                        <a href="/dormitory/student/complaint-log"> Complaint Log </a>
                                     </li>
                                 </ul>
                             </li>
@@ -197,7 +202,7 @@
                                                 <h6>
                                                     <%= currentUser.username %>
                                                 </h6>
-                                                <a href="/dormitory/student/logout"
+                                                <a href="/dormitory/admin/logout"
                                                     class="btn btn-outline-primary btn-rounded mr-1 meta-date-time">Logout</a>
                                             </div>
                                         </div>
@@ -235,7 +240,7 @@
                                                 <circle cx="12" cy="12" r="6"></circle>
                                                 <circle cx="12" cy="12" r="2"></circle>
                                             </svg>
-                                            <span>View Pass Requests</span>
+                                            <span>New Pass Requests</span>
                                         </div>
                                     </a>
                                 </li>
@@ -293,7 +298,8 @@
 
 
                                 <li class="menu">
-                                    <a href="/surveillance" aria-expanded="false" class="dropdown-toggle">
+                                    <a href="/dormitory/admin/surveillance" aria-expanded="false"
+                                        class="dropdown-toggle">
                                         <div class="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

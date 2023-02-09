@@ -200,7 +200,7 @@
         async function checkFace(face) {
 
             // POST request using fetch()
-            let res = await fetch("/check-face", {
+            let res = await fetch("/dormitory/admin/check-face", {
                 method: "POST",
                 body: JSON.stringify(face),
                 headers: {

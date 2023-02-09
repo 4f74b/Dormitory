@@ -102,13 +102,14 @@
                                                 <div class="task-header d-flex flex-column position-relative">
                                                     <div
                                                         class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                        <a href="/dormitory/student" class="w-img mr-3">
+                                                        <a href="/dormitory/student/<%= hostellite.username %>"
+                                                            class="w-img mr-3">
                                                             <% if (hostellite.profileImage){ %>
                                                                 <img src="/hostel-files/hostellite-profile-images/<%= hostellite.profileImage %>"
                                                                     alt="avatar">
                                                                 <% }else{ %>
 
-                                                                    <img src="/assets/img/profile-3.jpg" alt="avatar">
+                                                                    <img src="/assets/img/profile-6.jpg" alt="avatar">
                                                                     <% } %>
                                                         </a>
                                                         <div class="media-body d-flex flex-column">
@@ -150,7 +151,7 @@
 
                                                         <div class="position-absolute p-3" style="top: 0; right:0;">
                                                             <% if (passRequest.seen){ %>
-                                                                <div class="bs-popover rounded text-danger"
+                                                                <div class="bs-popover rounded text-success"
                                                                     style="cursor:default;" data-container="body"
                                                                     data-trigger="hover"
                                                                     data-content="Your request is seen">

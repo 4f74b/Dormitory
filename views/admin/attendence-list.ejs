@@ -14,6 +14,8 @@
     <div id="content" class="main-content mt-5 pt-3">
         <div class="layout-px-spacing">
 
+            <h1>
+            </h1>
             <!-- Modal -->
             <div class="modal fade" id="deleteConformation" tabindex="-1" aria-labelledby="deleteConformationLabel"
                 style="display: none;" aria-hidden="true">
@@ -90,456 +92,243 @@
                             <div class="connect-sorting">
                                 <div class="task-container-header d-flex">
                                     <h6 class="s-heading" data-listtitle="In Progress">Left Students Status</h6>
-                                    <div id="cd-simple">
-                                        <div class="countdown mr-2">
-                                            <div class="clock-count-container bg-white">
-                                                <h1 class="clock-val d-flex justify-content-center" id="hours">08</h1>
+
+                                    <% if (attendenceList.length !=0){ %>
+
+                                        <div id="cd-simple">
+                                            <div class="countdown mr-2">
+                                                <div class="clock-count-container bg-white">
+                                                    <h1 class="clock-val d-flex justify-content-center" id="hours">08
+                                                    </h1>
+                                                </div>
+                                                <h4 class="clock-text d-flex justify-content-center"> Hours
+                                                </h4>
                                             </div>
-                                            <h4 class="clock-text d-flex justify-content-center"> Hours
-                                            </h4>
-                                        </div>
-                                        <div class="countdown mr-2">
-                                            <div class="clock-count-container bg-white">
-                                                <h1 class="clock-val d-flex justify-content-center" id="minutes">32</h1>
+                                            <div class="countdown mr-2">
+                                                <div class="clock-count-container bg-white">
+                                                    <h1 class="clock-val d-flex justify-content-center" id="minutes">32
+                                                    </h1>
+                                                </div>
+                                                <h4 class="clock-text d-flex justify-content-center"> Mins </h4>
                                             </div>
-                                            <h4 class="clock-text d-flex justify-content-center"> Mins </h4>
-                                        </div>
-                                        <div class="countdown mr-2">
-                                            <div class="clock-count-container bg-white">
-                                                <h1 class="clock-val d-flex justify-content-center" id="seconds">04</h1>
+                                            <div class="countdown mr-2">
+                                                <div class="clock-count-container bg-white">
+                                                    <h1 class="clock-val d-flex justify-content-center" id="seconds">04
+                                                    </h1>
+                                                </div>
+                                                <h4 class="clock-text d-flex justify-content-center"> Sec </h4>
                                             </div>
-                                            <h4 class="clock-text d-flex justify-content-center"> Sec </h4>
                                         </div>
-                                    </div>
+
+                                        <% } %>
+
                                 </div>
                                 <div class="connect-sorting-content ui-sortable" data-sortable="true">
 
                                     <div data-draggable="true" id="studentsStatus" class="card flex-row flex-wrap"
                                         style="background:none; box-shadow:none;">
 
-                                        <div class="card-body border rounded mr-5 col-xl-3 mb-5 bg-white">
+                                        <% if (attendenceList.length !=0){ %>
+                                            <% for (passRequest of attendenceList){ %>
 
-                                            <div class="task-header d-flex flex-column">
-                                                <div
-                                                    class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                    <a href="/dormitory/student" class="w-img mr-3">
-                                                        <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                                    </a>
-                                                    <div class="media-body d-flex flex-column">
-                                                        <h6 class="d-flex align-items-center">
-                                                            Nawaz Sharif</h6>
-                                                        <p class="d-flex align-items-center">
-                                                            Hostel 3, Room # 322
-                                                        </p>
-                                                        <small data-taskdate="08 Aug 2020"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="14" viewBox="0 0 24 24" fill="none" 3
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-calendar">
-                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
-                                                                </rect>
-                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                            </svg> 08 Aug, 2020 (<small>02:
-                                                                30 pm</small>)</small>
-                                                    </div>
+                                                <div class="card-body border rounded mr-5 col-xl-3 mb-5 bg-white">
 
-                                                </div>
-
-                                                <div class="">
-                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
-                                                        Want to go for Shopping</h4>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="task-body ml-4 mr-4">
-                                                <div class="task-content">
-                                                    <p class="" data-tasktext="">I have recieved HEC need based
-                                                        scholorship and I want to go shopping with that.</p>
-
-                                                </div>
-
-
-
-                                                <div class="task-bottom m-0 d-flex flex-column">
-                                                    <div class="tb-section-2">
-                                                        <span data-taskdate="08 Aug 2020"> Type: Night Pass<svg
-                                                                style="cursor: unset;" class=" ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
-                                                                </path>
-                                                            </svg>
-                                                            <svg style="cursor: unset;" class="d-none ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <circle cx="12" cy="12" r="5"></circle>
-                                                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64">
-                                                                </line>
-                                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78">
-                                                                </line>
-                                                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
-                                                                </line>
-                                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
-                                                                </line>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-
-                                                </div>
-                                                <div class="task-bottom m-0">
-
-                                                    <div class="d-flex border">
-                                                        <div class="bg-info p-2">Status</div>
-                                                        <div class="p-2 text-danger">Not Back Yet</div>
-
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="d-flex align-items-center justify-content-end mb-3">
-                                                    <button class="btn btn-success">Mark as
-                                                        returned</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-body border rounded mr-5 col-xl-3 mb-5 bg-white">
-
-                                            <div class="task-header d-flex flex-column">
-                                                <div
-                                                    class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                    <a href="/dormitory/student" class="w-img mr-3">
-                                                        <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                                    </a>
-                                                    <div class="media-body d-flex flex-column">
-                                                        <h6 class="d-flex align-items-center">
-                                                            Nawaz Sharif</h6>
-                                                        <p class="d-flex align-items-center">
-                                                            Hostel 3, Room # 322
-                                                        </p>
-                                                        <small data-taskdate="08 Aug 2020"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="14" viewBox="0 0 24 24" fill="none" 3
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-calendar">
-                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
-                                                                </rect>
-                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                            </svg> 08 Aug, 2020 (<small>02:
-                                                                30 pm</small>)</small>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="">
-                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
-                                                        Want to go for Shopping</h4>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="task-body ml-4 mr-4">
-                                                <div class="task-content">
-                                                    <p class="" data-tasktext="">I have recieved HEC need based
-                                                        scholorship and I want to go shopping with that.</p>
-
-                                                </div>
-
-
-
-                                                <div class="task-bottom m-0 d-flex flex-column">
-                                                    <div class="tb-section-2">
-                                                        <span data-taskdate="08 Aug 2020"> Type: Night Pass<svg
-                                                                style="cursor: unset;" class=" ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
-                                                                </path>
-                                                            </svg>
-                                                            <svg style="cursor: unset;" class="d-none ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <circle cx="12" cy="12" r="5"></circle>
-                                                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64">
-                                                                </line>
-                                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78">
-                                                                </line>
-                                                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
-                                                                </line>
-                                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
-                                                                </line>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-
-                                                </div>
-                                                <div class="task-bottom m-0">
-
-                                                    <div class="d-flex border">
+                                                    <div class="task-header d-flex flex-column">
                                                         <div
-                                                            class="bg-info p-2 d-flex justify-content-center align-items-center">
-                                                            Status</div>
-                                                        <div
-                                                            class="p-2 text-danger d-none justify-content-center align-items-center">
-                                                            Not Back Yet</div>
-                                                        <div
-                                                            class="p-2 text-success d-flex justify-content-center align-items-center">
-                                                            Returned</div>
-                                                        <img src="/assets/img/profile-4.jpg" alt="" width="50"
-                                                            height="50">
+                                                            class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
+                                                            <a href="/dormitory/student/<%= passRequest.senderUsername %>"
+                                                                class="w-img mr-3">
+                                                                <% if (passRequest.sender.profileImage){ %>
+                                                                    <img src="/hostel-files/hostellite-profile-images/<%= passRequest.sender.profileImage %>"
+                                                                        alt="avatar">
+                                                                    <% }else{ %>
+                                                                        <img src="/assets/img/profile-6.jpg"
+                                                                            alt="avatar">
+
+                                                                        <% } %>
+                                                            </a>
+                                                            <div class="media-body d-flex flex-column">
+                                                                <h6 class="d-flex align-items-center">
+                                                                    <%= passRequest.sender.fullName %>
+                                                                </h6>
+                                                                <p class="d-flex align-items-center">
+                                                                    Hostel <%= passRequest.sender.hostelInfo.hostelNo %>
+                                                                        ,
+                                                                        Room #
+                                                                        <%= passRequest.sender.hostelInfo.roomNo %>
+                                                                </p><small data-taskdate="08 Aug 2020"><svg
+                                                                        xmlns="http://www.w3.org/2000/svg" width="14"
+                                                                        height="14" viewBox="0 0 24 24" fill="none" 3
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-calendar">
+                                                                        <rect x="3" y="4" width="18" height="18" rx="2"
+                                                                            ry="2">
+                                                                        </rect>
+                                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                    </svg>
+                                                                    <%= passRequest.passTime.getDate() %>/<%=
+                                                                            passRequest.passTime.getMonth() %>/<%=
+                                                                                passRequest.passTime.getFullYear() %>
+                                                                                (<small>
+                                                                                    <%=
+                                                                                        ((passRequest.passTime.getHours()>
+                                                                                        12) ?
+                                                                                        (passRequest.passTime.getHours()
+                                                                                        -12) :
+                                                                                        passRequest.passTime.getHours())+":"+passRequest.passTime.getMinutes()
+                                                                                        +
+                                                                                        ((passRequest.passTime.getHours()>
+                                                                                        12) ? " PM" : " AM")
+                                                                                        %>
+                                                                                </small>)
+                                                                </small>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
 
 
+                                                    <div class="task-body ml-4 mr-4">
+                                                        <div class="task-content p-2 rounded border-dotted">
+                                                            <p class="" data-tasktext="">
+                                                                <%= passRequest.passReason %>
+                                                            </p>
+
+                                                        </div>
+
+
+
+                                                        <div class="task-bottom m-0 d-flex flex-column">
+                                                            <div class="tb-section-2">
+                                                                <div class="tb-section-2">
+
+                                                                    <% if (passRequest.passType=='night' ){ %>
+                                                                        <span data-taskdate="08 Aug 2020">
+                                                                            Type: Night Pass
+                                                                            <svg style="cursor: unset;" class=" ml-2"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                width="24" height="24"
+                                                                                viewBox="0 0 24 24" fill="none"
+                                                                                stroke="black" stroke-width="2"
+                                                                                stroke-linecap="round"
+                                                                                stroke-linejoin="round">
+                                                                                <path
+                                                                                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
+                                                                                </path>
+                                                                            </svg>
+                                                                        </span>
+
+                                                                        <% }else if (passRequest.passType=='day' ){ %>
+                                                                            <span data-taskdate="08 Aug 2020">
+                                                                                Type: Day Pass
+                                                                                <svg style="cursor: unset;"
+                                                                                    class=" ml-2"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24" fill="none"
+                                                                                    stroke="black" stroke-width="2"
+                                                                                    stroke-linecap="round"
+                                                                                    stroke-linejoin="round">
+                                                                                    <circle cx="12" cy="12" r="5">
+                                                                                    </circle>
+                                                                                    <line x1="12" y1="1" x2="12" y2="3">
+                                                                                    </line>
+                                                                                    <line x1="12" y1="21" x2="12"
+                                                                                        y2="23">
+                                                                                    </line>
+                                                                                    <line x1="4.22" y1="4.22" x2="5.64"
+                                                                                        y2="5.64">
+                                                                                    </line>
+                                                                                    <line x1="18.36" y1="18.36"
+                                                                                        x2="19.78" y2="19.78">
+                                                                                    </line>
+                                                                                    <line x1="1" y1="12" x2="3" y2="12">
+                                                                                    </line>
+                                                                                    <line x1="21" y1="12" x2="23"
+                                                                                        y2="12">
+                                                                                    </line>
+                                                                                    <line x1="4.22" y1="19.78" x2="5.64"
+                                                                                        y2="18.36">
+                                                                                    </line>
+                                                                                    <line x1="18.36" y1="5.64"
+                                                                                        x2="19.78" y2="4.22">
+                                                                                    </line>
+                                                                                </svg>
+                                                                            </span>
+                                                                            <% } %>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="task-bottom m-0">
+
+                                                            <div class="d-flex border">
+                                                                <div
+                                                                    class="bg-info p-2 d-flex justify-content-center align-items-center">
+                                                                    Status
+                                                                </div>
+                                                                <% if (!passRequest.returned){ %>
+                                                                    <div
+                                                                        class="p-2 text-danger d-flex justify-content-center align-items-center">
+                                                                        Not Back Yet
+                                                                    </div>
+                                                                    <% }else{ %>
+                                                                        <div
+                                                                            class="p-2 text-success justify-content-center align-items-center">
+                                                                            Returned
+                                                                        </div>
+                                                                        <img class="d-none"
+                                                                            src="/assets/img/profile-4.jpg" alt=""
+                                                                            width="50" height="50">
+                                                                        <% } %>
+
+
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="d-flex align-items-center justify-content-end mb-3">
+                                                            <button class="btn btn-success d-none">Mark as
+                                                                returned</button>
+                                                            <small>Return Time</small>
+                                                            <div data-taskdate="08 Aug 2020" class="ml-2">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="18"
+                                                                    height="18" viewBox="0 0 24 24" fill="none"
+                                                                    stroke="currentColor" stroke-width="2"
+                                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                                    class="feather feather-clock mr-2">
+                                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                                </svg>
+                                                                <%= passRequest.returnTime.getDate() %>/<%=
+                                                                        passRequest.returnTime.getMonth() %>/<%=
+                                                                            passRequest.returnTime.getFullYear() %>
+                                                                            (<small>
+                                                                                <%= ((passRequest.returnTime.getHours()>
+                                                                                    12) ?
+                                                                                    (passRequest.returnTime.getHours()
+                                                                                    -12) :
+                                                                                    passRequest.returnTime.getHours())+":"+passRequest.returnTime.getMinutes()
+                                                                                    +
+                                                                                    ((passRequest.returnTime.getHours()>
+                                                                                    12) ? " PM" : " AM")
+                                                                                    %>
+                                                                            </small>)
+                                                                            </small>
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                 </div>
 
-
-
-                                                <div class="d-flex align-items-center justify-content-end mb-3">
-                                                    <button class="btn btn-success d-none">Mark as
-                                                        returned</button>
-                                                    <div data-taskdate="08 Aug 2020"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-clock mr-2">
-                                                            <circle cx="12" cy="12" r="10"></circle>
-                                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                                        </svg>02:
-                                                        30 pm</div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-body border rounded mr-5 col-xl-3 mb-5 bg-white">
-
-                                            <div class="task-header d-flex flex-column">
-                                                <div
-                                                    class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                    <a href="/dormitory/student" class="w-img mr-3">
-                                                        <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                                    </a>
-                                                    <div class="media-body d-flex flex-column">
-                                                        <h6 class="d-flex align-items-center">
-                                                            Nawaz Sharif</h6>
-                                                        <p class="d-flex align-items-center">
-                                                            Hostel 3, Room # 322
-                                                        </p>
-                                                        <small data-taskdate="08 Aug 2020"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="14" viewBox="0 0 24 24" fill="none" 3
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-calendar">
-                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
-                                                                </rect>
-                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                            </svg> 08 Aug, 2020 (<small>02:
-                                                                30 pm</small>)</small>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="">
-                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
-                                                        Want to go for Shopping</h4>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="task-body ml-4 mr-4">
-                                                <div class="task-content">
-                                                    <p class="" data-tasktext="">I have recieved HEC need based
-                                                        scholorship and I want to go shopping with that.</p>
-
-                                                </div>
-
-
-
-                                                <div class="task-bottom m-0 d-flex flex-column">
-                                                    <div class="tb-section-2">
-                                                        <span data-taskdate="08 Aug 2020"> Type: Night Pass<svg
-                                                                style="cursor: unset;" class=" ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
-                                                                </path>
-                                                            </svg>
-                                                            <svg style="cursor: unset;" class="d-none ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <circle cx="12" cy="12" r="5"></circle>
-                                                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64">
-                                                                </line>
-                                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78">
-                                                                </line>
-                                                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
-                                                                </line>
-                                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
-                                                                </line>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-
-                                                </div>
-                                                <div class="task-bottom m-0">
-
-                                                    <div class="d-flex border">
-                                                        <div class="bg-info p-2">Status</div>
-                                                        <div class="p-2 text-danger">Not Back Yet</div>
-
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="d-flex align-items-center justify-content-end mb-3">
-                                                    <button class="btn btn-success">Mark as
-                                                        returned</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card-body border rounded mr-5 col-xl-3 mb-5 bg-white">
-
-                                            <div class="task-header d-flex flex-column">
-                                                <div
-                                                    class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                    <a href="/dormitory/student" class="w-img mr-3">
-                                                        <img src="/assets/img/AftabProfile1.jpg" alt="avatar">
-                                                    </a>
-                                                    <div class="media-body d-flex flex-column">
-                                                        <h6 class="d-flex align-items-center">
-                                                            Nawaz Sharif</h6>
-                                                        <p class="d-flex align-items-center">
-                                                            Hostel 3, Room # 322
-                                                        </p>
-                                                        <small data-taskdate="08 Aug 2020"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                height="14" viewBox="0 0 24 24" fill="none" 3
-                                                                stroke="currentColor" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                class="feather feather-calendar">
-                                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
-                                                                </rect>
-                                                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                            </svg> 08 Aug, 2020 (<small>02:
-                                                                30 pm</small>)</small>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="">
-                                                    <h4 class="" data-tasktitle="Creating a new Portfolio on Dribble">
-                                                        Want to go for Shopping</h4>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="task-body ml-4 mr-4">
-                                                <div class="task-content">
-                                                    <p class="" data-tasktext="">I have recieved HEC need based
-                                                        scholorship and I want to go shopping with that.</p>
-
-                                                </div>
-
-
-
-                                                <div class="task-bottom m-0 d-flex flex-column">
-                                                    <div class="tb-section-2">
-                                                        <span data-taskdate="08 Aug 2020"> Type: Night Pass<svg
-                                                                style="cursor: unset;" class=" ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z">
-                                                                </path>
-                                                            </svg>
-                                                            <svg style="cursor: unset;" class="d-none ml-2"
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="black" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <circle cx="12" cy="12" r="5"></circle>
-                                                                <line x1="12" y1="1" x2="12" y2="3"></line>
-                                                                <line x1="12" y1="21" x2="12" y2="23"></line>
-                                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64">
-                                                                </line>
-                                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78">
-                                                                </line>
-                                                                <line x1="1" y1="12" x2="3" y2="12"></line>
-                                                                <line x1="21" y1="12" x2="23" y2="12"></line>
-                                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
-                                                                </line>
-                                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
-                                                                </line>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-
-                                                </div>
-                                                <div class="task-bottom m-0">
-
-                                                    <div class="d-flex border">
-                                                        <div class="bg-info p-2">Status</div>
-                                                        <div class="p-2 text-danger">Not Back Yet</div>
-
-                                                    </div>
-                                                </div>
-
-
-
-                                                <div class="d-flex align-items-center justify-content-end mb-3">
-                                                    <button class="btn btn-success">Mark as
-                                                        returned</button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                                <% } %>
+                                                    <% }else{ %>
+                                                        <h1>Nothing to show here</h1>
+                                                        <% } %>
 
 
 
