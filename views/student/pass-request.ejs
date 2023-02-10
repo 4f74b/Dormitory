@@ -4,60 +4,63 @@
     <div id="content" class="main-content mt-5 pt-3">
         <div class="layout-px-spacing">
 
-            <div class="row layout-spacing">
-
-                <!-- Content -->
-                <div class="col-xl-8 col-sm-12 layout-top-spacing">
+            <%- include('../partials/flash/flash.ejs') %>
 
 
-                    <div class="user-profile layout-spacing">
-                        <div class="widget-content widget-content-area">
-                            <form method="post" class="needs-validation" novalidate
-                                action="/dormitory/student/post-pass-request">
-                                <div class="input-group mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Reason of pass</span>
+                <div class="row layout-spacing">
+
+                    <!-- Content -->
+                    <div class="col-xl-8 col-sm-12 layout-top-spacing">
+
+
+                        <div class="user-profile layout-spacing">
+                            <div class="widget-content widget-content-area">
+                                <form method="post" class="needs-validation" novalidate
+                                    action="/dormitory/student/post-pass-request">
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Reason of pass</span>
+                                        </div>
+                                        <textarea name="passReason" class="form-control" aria-label="With textarea"
+                                            id="passReason" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Please provide reason of pass.
+                                        </div>
                                     </div>
-                                    <textarea name="passReason" class="form-control" aria-label="With textarea"
-                                        id="passReason" required></textarea>
-                                    <div class="invalid-feedback">
-                                        Please provide reason of pass.
-                                    </div>
-                                </div>
-                                <fieldset class="form-group mb-3">
-                                    <div class="d-flex">
-                                        <div class="n-chk">
-                                            <label class="new-control new-radio radio-dark">
-                                                <input type="radio" class="new-control-input" value="night"
-                                                    name="passType" checked>
-                                                <span class="new-control-indicator"></span>Night pass
-                                            </label>
+                                    <fieldset class="form-group mb-3">
+                                        <div class="d-flex">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-dark">
+                                                    <input type="radio" class="new-control-input" value="night"
+                                                        name="passType" checked>
+                                                    <span class="new-control-indicator"></span>Night pass
+                                                </label>
+                                            </div>
+
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio radio-primary">
+                                                    <input type="radio" class="new-control-input" value="day"
+                                                        name="passType">
+                                                    <span class="new-control-indicator"></span>Day pass
+                                                </label>
+                                            </div>
+
+
                                         </div>
 
-                                        <div class="n-chk">
-                                            <label class="new-control new-radio radio-primary">
-                                                <input type="radio" class="new-control-input" value="day"
-                                                    name="passType">
-                                                <span class="new-control-indicator"></span>Day pass
-                                            </label>
-                                        </div>
-
+                                    </fieldset>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-primary mt-3" type="submit">Submit Request</button>
 
                                     </div>
-
-                                </fieldset>
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-primary mt-3" type="submit">Submit Request</button>
-
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
+
                     </div>
 
+
                 </div>
-
-
-            </div>
         </div>
 
     </div>

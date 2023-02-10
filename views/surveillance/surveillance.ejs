@@ -3,95 +3,98 @@
     <!--  BEGIN CONTENT AREA  -->
     <div id="content" class="main-content mt-5 pt-3">
         <div class="container p-1 m-0" style="min-width: 100%;">
+            <%- include('../partials/flash/flash.ejs') %>
 
-            <div class="modal-dialog m-0 d-flex justify-content-center" role="document"
-                style="max-width: 100%; max-height:70vh;">
-                <div class="modal-content card component-card_9 rounded-0" style="">
-                    <div class="d-flex flex-column">
 
-                        <div class="col-12 p-0 p-0 m-0" style="">
-                            <div class=" tab-content" id="v-line-pills-tabContent">
-                                <div style="" class="tab-pane active" id="v-line-pills-profile" role="tabpanel"
-                                    aria-labelledby="v-line-pills-profile-tab">
+                <div class="modal-dialog m-0 d-flex justify-content-center" role="document"
+                    style="max-width: 100%; max-height:70vh;">
+                    <div class="modal-content card component-card_9 rounded-0" style="">
+                        <div class="d-flex flex-column">
 
-                                    <div class="media">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
-                                            <div class="widget widget-table-two">
+                            <div class="col-12 p-0 p-0 m-0" style="">
+                                <div class=" tab-content" id="v-line-pills-tabContent">
+                                    <div style="" class="tab-pane active" id="v-line-pills-profile" role="tabpanel"
+                                        aria-labelledby="v-line-pills-profile-tab">
 
-                                                <div class="widget-heading">
-                                                    <h5 class="p-2 text-danger">Possible Intruders</h5>
-                                                </div>
+                                        <div class="media">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing w-100">
+                                                <div class="widget widget-table-two">
 
-                                                <div class="widget-content" style="height: 60vh; overflow-y: auto;">
-                                                    <div class="table-responsive">
-                                                        <table class="table intruder">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        <div class="th-content d-none">hidden</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Info</div>
-                                                                    </th>
-                                                                    <th>
-                                                                        <div class="th-content">Response</div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td class="p-1">
-                                                                        <div class="td-content customer-name">
-                                                                            <img src="/assets/img/profile-13.jpg"
-                                                                                alt="avatar">
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1 w-50">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <div>Unknown</div>
-                                                                            <div>time</div>
-                                                                            <div>Hostel#</div>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td class="p-1">
-                                                                        <div
-                                                                            class="d-flex flex-column align-item-center justify-content-center">
-                                                                            <span class="badge badge-danger mb-1"
-                                                                                role="button">Ignore</span>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                    <div class="widget-heading">
+                                                        <h5 class="p-2 text-danger">Possible Intruders</h5>
+                                                    </div>
+
+                                                    <div class="widget-content" style="height: 60vh; overflow-y: auto;">
+                                                        <div class="table-responsive">
+                                                            <table class="table intruder">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="th-content d-none">hidden</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="th-content">Info</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="th-content">Response</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="p-1">
+                                                                            <div class="td-content customer-name">
+                                                                                <img src="/assets/img/profile-13.jpg"
+                                                                                    alt="avatar">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="p-1 w-50">
+                                                                            <div
+                                                                                class="d-flex flex-column align-item-center justify-content-center">
+                                                                                <div>Unknown</div>
+                                                                                <div>time</div>
+                                                                                <div>Hostel#</div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="p-1">
+                                                                            <div
+                                                                                class="d-flex flex-column align-item-center justify-content-center">
+                                                                                <span class="badge badge-danger mb-1"
+                                                                                    role="button">Ignore</span>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
 
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-content rounded-0" id="modal-reload" style="width: fit-content;">
-                    <div class="modal-body p-1">
-                        <div class="cameraWrapper h-100 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 w-100" id="wrapper">
-                            <!-- <div style="min-width: 720px; min-height:560px;"></div> -->
-                            <video muted id="video" width="720" height="560" autoplay
-                                class="position-relative revert"></video>
-                            <div class="loader1 d-none justify-content-center align-items-center">
-                                <div class="spinner-border text-info align-self-center loader-lg">Loading...
+                    <div class="modal-content rounded-0" id="modal-reload" style="width: fit-content;">
+                        <div class="modal-body p-1">
+                            <div class="cameraWrapper h-100 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 w-100"
+                                id="wrapper">
+                                <!-- <div style="min-width: 720px; min-height:560px;"></div> -->
+                                <video muted id="video" width="720" height="560" autoplay
+                                    class="position-relative revert"></video>
+                                <div class="loader1 d-none justify-content-center align-items-center">
+                                    <div class="spinner-border text-info align-self-center loader-lg">Loading...
+                                    </div>
+                                    <div>Loading Faces</div>
                                 </div>
-                                <div>Loading Faces</div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
         </div>
         <div class="modal-footer">
             <img src="" alt="" id="testImg">

@@ -43,7 +43,7 @@
 
             <% }else if (!currentUser){ %>
                 <a href="/dormitory/admin/login"
-                    class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-none justify-content-center align-items-center btn btn-outline-dark"
+                    class="ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center btn btn-outline-dark"
                     style="margin-left:auto;">Login
                 </a>
                 <% } %>
@@ -66,7 +66,8 @@
 
 
             <% if (currentUser && currentUser.role=='student' ){ %>
-                <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
+                <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample"
+                    style="height: 100vh !important;">
                     <% if (currentUser){ %>
                         <li class="menu mt-5 mb-2">
                             <div aria-expanded="false" data-active="true"
@@ -174,7 +175,8 @@
                                         <a href="/dormitory/student/post-complaint"> Write Complaint </a>
                                     </li>
                                     <li>
-                                        <a href="/dormitory/student/complaint-log"> Complaint Log </a>
+                                        <a href="/dormitory/student/complaint-log/<%= currentUser.username %>">
+                                            Complaint Log </a>
                                     </li>
                                 </ul>
                             </li>
@@ -182,7 +184,8 @@
 
                 <% } else{ %>
 
-                    <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
+                    <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample"
+                        style="height: 100vh !important;">
                         <% if (currentUser){ %>
                             <li class="menu mt-5">
                                 <div aria-expanded="false" data-active="true"
@@ -264,7 +267,7 @@
                                 </li>
 
                                 <li class="menu">
-                                    <a href="#" aria-expanded="false" class="dropdown-toggle">
+                                    <a href="/dormitory/admin/complaints" aria-expanded="false" class="dropdown-toggle">
                                         <div class="">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
