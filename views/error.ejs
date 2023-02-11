@@ -39,7 +39,11 @@
             <p>
                 <%= err.message %>
             </p>
-            <a href="index-2.html" class="btn btn-primary mt-5">Go Back</a>
+            <% if(currentUrl.split('/')[2]=='admin' ){ %>
+                <a href="/dormitory/admin/hostellites-list" class="btn btn-primary mt-5">Home</a>
+                <% }else{ %>
+                    <a href="/dormitory/" class="btn btn-primary mt-5">home</a>
+                    <% } %>
         </div>
     </div>
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
