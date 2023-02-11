@@ -22,6 +22,7 @@
                 <%- include('../partials/flash/flash.ejs') %>
 
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                        <h2>Hostellites List</h2>
                         <div class="widget-content widget-content-area br-6">
                             <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
                                 <% if (hostelliteList !=0){ %>
@@ -113,7 +114,8 @@
                             </table>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <a href="/dormitory/admin/add-hostellite" class="badge outline-badge-secondary p-4 mt-2">
+                        <a href="/dormitory/<%= ((currentUser.role == 'warden') ? 'admin' : 'staff' ) %>/add-hostellite"
+                            class="badge outline-badge-secondary p-4 mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="feather feather-plus-square mr-2">
@@ -246,7 +248,7 @@
                     form.append('Aftab', username);
 
                     // POST request using fetch()
-                    let res = await fetch("/dormitory/admin/student/" + username + "/delete", {
+                    let res = await fetch("/dormitory/<%= ((currentUser.role == 'warden') ? 'admin' : 'staff' ) %>/student/" + username + "/delete", {
                         method: "POST",
                     })
                     res.json().then((data) => {

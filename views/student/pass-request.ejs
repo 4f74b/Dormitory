@@ -15,7 +15,7 @@
 
                         <div class="user-profile layout-spacing">
                             <div class="widget-content widget-content-area">
-                                <%if (new Date().getHours() <=22){ %>
+                                <%if (new Date().getHours()>22){ %>
 
                                     <form method="post" class="needs-validation" novalidate
                                         action="/dormitory/student/post-pass-request">
@@ -31,7 +31,7 @@
                                         </div>
                                         <fieldset class="form-group mb-3">
                                             <div class="d-flex">
-                                                <%if (new Date().getHours() <=22){ %>
+                                                <%if (new Date().getHours()>22){ %>
                                                     <div class="n-chk">
                                                         <label class="new-control new-radio radio-dark">
                                                             <input type="radio" class="new-control-input" value="night"
@@ -41,7 +41,7 @@
                                                     </div>
                                                     <% } %>
 
-                                                        <%if (new Date().getHours() <=14){ %>
+                                                        <%if (new Date().getHours()>14){ %>
 
                                                             <div class="n-chk">
                                                                 <label class="new-control new-radio radio-primary">

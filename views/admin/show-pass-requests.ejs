@@ -43,7 +43,8 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-danger" data-remove="task">Delete</button>
+                                <button type="button" class="btn btn-danger delete-confirm"
+                                    data-remove="task">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -86,25 +87,24 @@
 
                         <div class="task-list-section flex-wrap">
 
-                            <div data-section="s-new" class="col-12 mb-4" data-connect="">
-                                <div class="connect-sorting">
-                                    <div class="task-container-header d-flex flex-column">
-                                        <h6 class="s-heading" data-listtitle="In Progress">New Pass Requests
-                                        </h6>
-                                    </div>
-                                    <div class="">
+                            <% if (allPassRequests.length){ %>
 
-                                        <div id="newRequests"
-                                            class="card flex-row flex-wrap col-12 overflow-hidden border-bottom"
-                                            style="background:none; box-shadow:none;">
+                                <% for (passRequest of allPassRequests){ %>
 
-                                            <% if (allPassRequests.length){ %>
+                                    <% if (!passRequest.granted && !passRequest.rejected){ %>
+                                        <div data-section="s-new" class="task-list-container mb-4" data-connect="">
+                                            <div class="connect-sorting">
+                                                <div class="task-container-header d-flex flex-column">
+                                                    <h6 class="s-heading" data-listtitle="In Progress">New Pass Requests
+                                                    </h6>
+                                                </div>
+                                                <div class="">
 
-                                                <% for (passRequest of allPassRequests){ %>
+                                                    <div id="newRequests"
+                                                        class="card flex-row flex-wrap col-12 overflow-hidden border-bottom"
+                                                        style="background:none; box-shadow:none;">
 
-                                                    <% if (!passRequest.granted && !passRequest.rejected){ %>
-                                                        <div id="<%= passRequest._id %>"
-                                                            class="card-body border rounded mb-5 mr-5 col-xl-4 col-lg-12 bg-white">
+                                                        <div id="<%= passRequest._id %>" class="card-body bg-white">
 
                                                             <div class="task-header d-flex flex-column">
                                                                 <div
@@ -257,7 +257,8 @@
                                                                             data-target="#exampleModal">Decline</button>
 
                                                                     </div>
-                                                                    <div class="tb-section-2 d-flex align-items-center">
+                                                                    <div data-pass-id="<%=passRequest._id  %>"
+                                                                        class="tb-section-2 d-flex align-items-center deleteBtn">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                             width="24" height="24" viewBox="0 0 24 24"
                                                                             fill="none" stroke="currentColor"
@@ -281,25 +282,26 @@
                                                             </div>
                                                         </div>
 
-                                                        <% } %>
-                                                            <% } %>
-                                                                <% }else{ %>
-                                                                    <h1>No new pass requests...</h1>
-                                                                    <% } %>
 
 
 
 
 
+
+                                                    </div>
+
+
+
+                                                </div>
+
+
+                                            </div>
                                         </div>
-
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
+                                        <% } %>
+                                            <% } %>
+                                                <% }else{ %>
+                                                    <h1>No new pass requests...</h1>
+                                                    <% } %>
                         </div>
                     </div>
                 </div>
@@ -313,34 +315,7 @@
     </div>
     <!-- END MAIN CONTAINER -->
 
-    <script>
 
-        ////Show all new requests
-        //const showAll = function (evt) {
-        //    document.getElementById('newRequests').style.height = 'fit-content'
-        //    this.innerHTML = '^';
-        //    this.previousElementSibling.innerHTML = "Show Less";
-        //    this.removeEventListener('click', showAll);
-        //    this.addEventListener('click', hideAll);
-        //}
-        ////Hide all new requests
-        //const hideAll = function (evt) {
-        //    document.getElementById('newRequests').style.height = '55vh'
-        //    this.innerHTML = 'v';
-        //    this.previousElementSibling.innerHTML = "Show All";
-        //    this.removeEventListener('click', hideAll);
-        //    this.addEventListener('click', showAll);
-        //}
-        ////Show all new requests action listener
-        //document.getElementById('allNew').addEventListener('click', showAll)
-
-
-    </script>
-    <script src="/assets/js/ie11fix/fn.fix-padStart.js"></script>
-    <script src="/assets/js/apps/scrumboard.js"></script>
-    <script src="/plugins/dropify/dropify.min.js"></script>
-    <!-- <script src="/plugins/blockui/jquery.blockUI.min.js"></script> -->
-    <script src="/assets/js/users/account-settings.js"></script>
 
     <!-- Accept pass request -->
     <script>
@@ -372,3 +347,24 @@
             })
         }
     </script>
+
+    <!-- Delete Pass Request -->
+    <script>
+        for (deleteBtn of document.querySelectorAll('.deleteBtn')) {
+            deleteBtn.addEventListener('click', function (evt) {
+                document.querySelector('.delete-confirm').addEventListener('click', async function (evt) {
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    const res = await fetch('/dormitory/admin/pass-request/' + deleteBtn.getAttribute('data-pass-id') + '/delete', {
+                        method: 'post'
+                    })
+                })
+            })
+        }
+    </script>
+
+    <script src="/assets/js/ie11fix/fn.fix-padStart.js"></script>
+    <script src="/assets/js/apps/scrumboard.js"></script>
+    <script src="/plugins/dropify/dropify.min.js"></script>
+    <!-- <script src="/plugins/blockui/jquery.blockUI.min.js"></script> -->
+    <script src="/assets/js/users/account-settings.js"></script>

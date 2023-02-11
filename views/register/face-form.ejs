@@ -56,7 +56,8 @@
                                         <h1 class="text-center pt-3">
                                             <u>Add Hostellite</u>
                                         </h1>
-                                        <form class="text-left" method="post" action="/dormitory/admin/add-hostellite"
+                                        <form class="text-left" method="post"
+                                            action="/dormitory/<%= ((currentUser.role == 'warden') ? 'admin' : 'staff' ) %>/add-hostellite"
                                             enctype="multipart/form-data">
                                             <div class="form">
 
@@ -151,6 +152,7 @@
                                                                         <option>28</option>
                                                                         <option>29</option>
                                                                         <option>30</option>
+                                                                        <option>31</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group mr-1">
@@ -175,6 +177,17 @@
                                                                     <select name="DOB[]" class="form-control"
                                                                         id="BornYear">
                                                                         <option>Year</option>
+                                                                        <option>2029</option>
+                                                                        <option>2028</option>
+                                                                        <option>2027</option>
+                                                                        <option>2026</option>
+                                                                        <option>2025</option>
+                                                                        <option>2024</option>
+                                                                        <option>2023</option>
+                                                                        <option>2022</option>
+                                                                        <option>2021</option>
+                                                                        <option>2020</option>
+                                                                        <option>2019</option>
                                                                         <option>2018</option>
                                                                         <option>2017</option>
                                                                         <option>2016</option>
@@ -319,6 +332,24 @@
                                                                                                     id="s-from1">
                                                                                                     <option>Year
                                                                                                     </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
+                                                                                                    </option>
                                                                                                     <option>2020
                                                                                                     </option>
                                                                                                     <option>2019
@@ -399,6 +430,24 @@
                                                                                                     class="form-control input-sm"
                                                                                                     id="end-in1">
                                                                                                     <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
                                                                                                     </option>
                                                                                                     <option>2020
                                                                                                     </option>
@@ -514,6 +563,24 @@
                                                                                                     id="s-from2">
                                                                                                     <option>Year
                                                                                                     </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
+                                                                                                    </option>
                                                                                                     <option>2020
                                                                                                     </option>
                                                                                                     <option>2019
@@ -594,6 +661,24 @@
                                                                                                     class="form-control input-sm"
                                                                                                     id="end-in2">
                                                                                                     <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
                                                                                                     </option>
                                                                                                     <option>2020
                                                                                                     </option>
@@ -709,6 +794,24 @@
                                                                                                     id="s-from3">
                                                                                                     <option>Year
                                                                                                     </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
+                                                                                                    </option>
                                                                                                     <option>2020
                                                                                                     </option>
                                                                                                     <option>2019
@@ -789,6 +892,24 @@
                                                                                                     class="form-control input-sm"
                                                                                                     id="end-in3">
                                                                                                     <option>Year
+                                                                                                    </option>
+                                                                                                    <option>2029
+                                                                                                    </option>
+                                                                                                    <option>2028
+                                                                                                    </option>
+                                                                                                    <option>2027
+                                                                                                    </option>
+                                                                                                    <option>2026
+                                                                                                    </option>
+                                                                                                    <option>2025
+                                                                                                    </option>
+                                                                                                    <option>2024
+                                                                                                    </option>
+                                                                                                    <option>2023
+                                                                                                    </option>
+                                                                                                    <option>2022
+                                                                                                    </option>
+                                                                                                    <option>2021
                                                                                                     </option>
                                                                                                     <option>2020
                                                                                                     </option>
@@ -1097,7 +1218,6 @@
                                         <button id="nextPro" type="button" class="btn btn-primary d-none">next</button>
                                     </div>
 
-                                    <img src="/assets/img/AftabProfile1.jpg" alt="" class="d-none" id="test">
 
 
 

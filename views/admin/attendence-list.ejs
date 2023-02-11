@@ -550,7 +550,8 @@
 
     <script>
         const startNightCountdown = function () {
-            if (new Date().getHours() <= 22) {
+            console.log(new Date().getHours())
+            if (new Date().getHours() < 22) {
                 const time_start = new Date();
                 const time_end = new Date();
                 const value_start = [time_start.getHours(), time_start.getMinutes(), time_start.getSeconds()]

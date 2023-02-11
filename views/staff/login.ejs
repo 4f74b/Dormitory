@@ -16,6 +16,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="/assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/forms/switches.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/elements/alert.css">
 </head>
 
 <body class="form">
@@ -26,13 +27,13 @@
             <div class="form-form-wrap border" style="min-width: 500px;">
                 <div class="form-container">
                     <div class="form-content">
-
                         <%- include('../partials/flash/flash.ejs') %>
-
-
-                            <h1 class="">Student Login
+                            <h1 class="">
+                                <span class="brand-name mb-5">
+                                    Staff Log In
+                                </span>
                             </h1>
-                            <form class="text-left mt-5" method="post" action="/dormitory/student/login">
+                            <form class="text-left mt-5" method="post" action="/dormitory/staff/login">
                                 <div class="form">
 
                                     <div id="username-field" class="field-wrapper input">
@@ -71,7 +72,7 @@
 
                                     </div>
 
-                                    <div class="field-wrapper">
+                                    <div class="field-wrapper d-none">
                                         <a href="auth_pass_recovery.html" class="forgot-pass-link">Forgot
                                             Password?</a>
                                     </div>
@@ -97,7 +98,7 @@
 
     <!-- Text -->
     <script>
-        document.getElementById('username').value = 'aftabAlam';
+        document.getElementById('username').value = 'shahid';
         document.getElementById('password').value = '123';
         //document.getElementById('submit').click();
     </script>
