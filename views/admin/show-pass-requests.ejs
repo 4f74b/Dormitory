@@ -85,7 +85,8 @@
                 <div class="row scrumboard" id="cancel-row">
                     <div class="col-lg-12 layout-spacing">
 
-                        <div class="task-list-section flex-wrap">
+                        <h1>New Pass Requests</h1>
+                        <div class="task-list-section flex-wrap" id="newRequests">
 
                             <% if (allPassRequests.length){ %>
 
@@ -94,14 +95,9 @@
                                     <% if (!passRequest.granted && !passRequest.rejected){ %>
                                         <div data-section="s-new" class="task-list-container mb-4" data-connect="">
                                             <div class="connect-sorting">
-                                                <div class="task-container-header d-flex flex-column">
-                                                    <h6 class="s-heading" data-listtitle="In Progress">New Pass Requests
-                                                    </h6>
-                                                </div>
                                                 <div class="">
 
-                                                    <div id="newRequests"
-                                                        class="card flex-row flex-wrap col-12 overflow-hidden border-bottom"
+                                                    <div class="card flex-row flex-wrap col-12 overflow-hidden border-bottom p-0"
                                                         style="background:none; box-shadow:none;">
 
                                                         <div id="<%= passRequest._id %>" class="card-body bg-white">
@@ -246,9 +242,9 @@
                                                                     </div>
 
                                                                 </div>
-                                                                <div class="task-bottom m-0">
+                                                                <div class="task-bottom m-0 flex-column">
 
-                                                                    <div class="tb-section-3">
+                                                                    <div class="tb-section-3 d-flex mb-3">
                                                                         <button class="mr-2 btn btn-success accept-btn"
                                                                             data-request-id="<%= passRequest._id %>">Accept</button>
                                                                         <button data-request-id="<%= passRequest._id %>"
@@ -258,7 +254,7 @@
 
                                                                     </div>
                                                                     <div data-pass-id="<%=passRequest._id  %>"
-                                                                        class="tb-section-2 d-flex align-items-center deleteBtn">
+                                                                        class="tb-section-2 d-flex align-items-center justify-content-end deleteBtn">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                             width="24" height="24" viewBox="0 0 24 24"
                                                                             fill="none" stroke="currentColor"
