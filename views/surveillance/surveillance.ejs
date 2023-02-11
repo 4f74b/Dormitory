@@ -113,7 +113,7 @@
             faceapi.nets.faceRecognitionNet.loadFromUri("/"),
             faceapi.nets.faceExpressionNet.loadFromUri("/"),
         ]).then(() => {
-            //startVideo();
+            startVideo();
             //detect faces when camera turns on
             video.addEventListener("play", async () => {
                 const canvas = faceapi.createCanvasFromMedia(video);
@@ -136,13 +136,13 @@
                             detection = await checkFace(face)
                             //If the face is not present in database
                             console.log(detection);
-                            if (detection._label == 'unknown') {
-                                //Show picture in surveillane page
-                                document.querySelector('.intruder').innerHTML += '<tbody> <tr> <td class="p-1"> <div class="td-content customer-name"> <img src="' + tempImg + '" alt="avatar"> </div> </td> <td class="p-1 w-50"> <div class="d-flex flex-column align-item-center justify-content-center"> <div>Unknown</div> <div>time</div> <div>Hostel#</div> </div> </td> <td class="p-1"> <div class="d-flex flex-column align-item-center justify-content-center"> <span class="badge badge-danger mb-1" role="button">Ignore</span> </div> </td> </tr> </tbody>';
+                            //if (detection._label == 'unknown') {
+                            //Show picture in surveillane page
+                            //document.querySelector('.intruder').innerHTML += '<tbody> <tr> <td class="p-1"> <div class="td-content customer-name"> <img src="' + tempImg + '" alt="avatar"> </div> </td> <td class="p-1 w-50"> <div class="d-flex flex-column align-item-center justify-content-center"> <div>Unknown</div> <div>time</div> <div>Hostel#</div> </div> </td> <td class="p-1"> <div class="d-flex flex-column align-item-center justify-content-center"> <span class="badge badge-danger mb-1" role="button">Ignore</span> </div> </td> </tr> </tbody>';
 
-                                //send picture of intruder to server
-                                //postIntruder(tempImg);
-                            }
+                            //send picture of intruder to server
+                            //postIntruder(tempImg);
+                            //}
                         }
                     }
 
