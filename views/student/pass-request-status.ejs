@@ -289,7 +289,8 @@
                                                             </div>
                                                             <div class="task-bottom m-0">
                                                                 <div class="task-bottom m-0 w-100">
-                                                                    <% if (!passRequest.nightPassRequest.rejected){ %>
+                                                                    <% if (!passRequest.nightPassRequest.rejected &&
+                                                                        !passRequest.nightPassRequest.wardenDeleted){ %>
                                                                         <div class="d-flex border">
                                                                             <div
                                                                                 class="bg-info p-2 d-flex justify-content-center align-items-center">
@@ -324,7 +325,8 @@
                                                                                         </div>
                                                                                         <% } %>
                                                                         </div>
-                                                                        <% }else{ %>
+                                                                        <% }else if
+                                                                            (passRequest.nightPassRequest.rejected){ %>
                                                                             <div class="d-column">
                                                                                 <div class="d-flex">
                                                                                     <div
@@ -346,55 +348,71 @@
                                                                                         ) %>
                                                                                 </p>
                                                                             </div>
-                                                                            <% } %>
+                                                                            <% } else if
+                                                                                (passRequest.nightPassRequest.wardenDeleted){
+                                                                                %>
+                                                                                <div class="">
+                                                                                    <div class="d-flex">
+                                                                                        <div class="bs-popover border-left text-white bg-danger d-flex justify-content-center align-items-center p-2"
+                                                                                            style="cursor:default;"
+                                                                                            data-container="body"
+                                                                                            data-trigger="hover"
+                                                                                            data-content="Your Pass request is deleted">
+                                                                                            Pass Request Ignored
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <% } %>
 
-                                                                                <% if
-                                                                                    (!passRequest.nightPassRequest.granted
-                                                                                    &&
-                                                                                    !passRequest.nightPassRequest.rejected){
-                                                                                    %>
+                                                                                    <% if
+                                                                                        (!passRequest.nightPassRequest.granted
+                                                                                        &&
+                                                                                        !passRequest.nightPassRequest.rejected){
+                                                                                        %>
 
-                                                                                    <% } %>
+                                                                                        <% } %>
 
-                                                                                        <% if
-                                                                                            (!passRequest.nightPassRequest.granted){
-                                                                                            %>
-                                                                                            <div
-                                                                                                class="tb-section-2 d-flex align-items-center ml-auto">
-                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                    data-pass-id="<%= passRequest.nightPassRequest._id  %>"
-                                                                                                    width="24"
-                                                                                                    height="24"
-                                                                                                    viewBox="0 0 24 24"
-                                                                                                    fill="none"
-                                                                                                    stroke="currentColor"
-                                                                                                    stroke-width="2"
-                                                                                                    stroke-linecap="round"
-                                                                                                    stroke-linejoin="round"
-                                                                                                    class="feather
+                                                                                            <% if
+                                                                                                (!passRequest.nightPassRequest.granted){
+                                                                                                %>
+                                                                                                <div
+                                                                                                    class="tb-section-2 d-flex align-items-center ml-auto">
+                                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                        data-pass-id="<%= passRequest.nightPassRequest._id  %>"
+                                                                                                        width="24"
+                                                                                                        height="24"
+                                                                                                        viewBox="0 0 24 24"
+                                                                                                        fill="none"
+                                                                                                        stroke="currentColor"
+                                                                                                        stroke-width="2"
+                                                                                                        stroke-linecap="round"
+                                                                                                        stroke-linejoin="round"
+                                                                                                        class="feather
                                                                                                 feather-trash-2
                                                                                                 s-task-delete
                                                                                                 list-delete deleteBtn"
-                                                                                                    href="javascript:void(0);">
-                                                                                                    <polyline
-                                                                                                        points="3 6 5 6 21 6">
-                                                                                                    </polyline>
-                                                                                                    <path
-                                                                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                                                                    </path>
-                                                                                                    <line x1="10"
-                                                                                                        y1="11" x2="10"
-                                                                                                        y2="17">
-                                                                                                    </line>
-                                                                                                    <line x1="14"
-                                                                                                        y1="11" x2="14"
-                                                                                                        y2="17">
-                                                                                                    </line>
-                                                                                                </svg>
+                                                                                                        href="javascript:void(0);">
+                                                                                                        <polyline
+                                                                                                            points="3 6 5 6 21 6">
+                                                                                                        </polyline>
+                                                                                                        <path
+                                                                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                                                                        </path>
+                                                                                                        <line x1="10"
+                                                                                                            y1="11"
+                                                                                                            x2="10"
+                                                                                                            y2="17">
+                                                                                                        </line>
+                                                                                                        <line x1="14"
+                                                                                                            y1="11"
+                                                                                                            x2="14"
+                                                                                                            y2="17">
+                                                                                                        </line>
+                                                                                                    </svg>
 
-                                                                                            </div>
+                                                                                                </div>
 
-                                                                                            <% } %>
+                                                                                                <% } %>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -622,7 +640,9 @@
                                                                 </div>
                                                                 <div class="task-bottom m-0">
                                                                     <div class="task-bottom m-0 w-100">
-                                                                        <% if (!passRequest.dayPassRequest.rejected){ %>
+                                                                        <% if (!passRequest.dayPassRequest.rejected &&
+                                                                            !passRequest.dayPassRequest.wardenDeleted){
+                                                                            %>
                                                                             <div class="d-flex border">
                                                                                 <div
                                                                                     class="bg-info p-2 d-flex justify-content-center align-items-center">
@@ -658,7 +678,9 @@
                                                                                             </div>
                                                                                             <% } %>
                                                                             </div>
-                                                                            <% }else{ %>
+                                                                            <% }else if
+                                                                                (passRequest.dayPassRequest.rejected){
+                                                                                %>
                                                                                 <div class="d-column">
                                                                                     <div class="d-flex">
                                                                                         <div
@@ -680,52 +702,58 @@
                                                                                             ) %>
                                                                                     </p>
                                                                                 </div>
-                                                                                <% } %>
+                                                                                <% }else if
+                                                                                    (passRequest.dayPassRequest.wardenDeleted){
+                                                                                    %>
+                                                                                    <div class="">
+                                                                                        <div class="d-flex">
+                                                                                            <div class="bs-popover border-left text-white bg-danger d-flex justify-content-center align-items-center p-2"
+                                                                                                style="cursor:default;"
+                                                                                                data-container="body"
+                                                                                                data-trigger="hover"
+                                                                                                data-content="Your Pass request is deleted">
+                                                                                                Pass Request Ignored
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <% } %>
 
-                                                                                    <% if
-                                                                                        (!passRequest.dayPassRequest.granted
-                                                                                        &&
-                                                                                        !passRequest.dayPassRequest.rejected){
-                                                                                        %>
 
-                                                                                        <% } %>
-                                                                                            <% if
-                                                                                                (!passRequest.dayPassRequest.granted){
-                                                                                                %>
-                                                                                                <div
-                                                                                                    class="tb-section-2 align-items-center ml-auto">
-                                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                        data-pass-id="<%= passRequest.dayPassRequest._id %>"
-                                                                                                        width="24"
-                                                                                                        height="24"
-                                                                                                        viewBox="0 0 24 24"
-                                                                                                        fill="none"
-                                                                                                        stroke="currentColor"
-                                                                                                        stroke-width="2"
-                                                                                                        stroke-linecap="round"
-                                                                                                        stroke-linejoin="round"
-                                                                                                        class="feather feather-trash-2 s-task-delete list-delete deleteBtn"
-                                                                                                        href="javascript:void(0);">
-                                                                                                        <polyline
-                                                                                                            points="3 6 5 6 21 6">
-                                                                                                        </polyline>
-                                                                                                        <path
-                                                                                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                                                                                        </path>
-                                                                                                        <line x1="10"
-                                                                                                            y1="11"
-                                                                                                            x2="10"
-                                                                                                            y2="17">
-                                                                                                        </line>
-                                                                                                        <line x1="14"
-                                                                                                            y1="11"
-                                                                                                            x2="14"
-                                                                                                            y2="17">
-                                                                                                        </line>
-                                                                                                    </svg>
+                                                                                        <% if
+                                                                                            (!passRequest.dayPassRequest.granted){
+                                                                                            %>
+                                                                                            <div
+                                                                                                class="tb-section-2 align-items-center ml-auto">
+                                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                    data-pass-id="<%= passRequest.dayPassRequest._id %>"
+                                                                                                    width="24"
+                                                                                                    height="24"
+                                                                                                    viewBox="0 0 24 24"
+                                                                                                    fill="none"
+                                                                                                    stroke="currentColor"
+                                                                                                    stroke-width="2"
+                                                                                                    stroke-linecap="round"
+                                                                                                    stroke-linejoin="round"
+                                                                                                    class="feather feather-trash-2 s-task-delete list-delete deleteBtn"
+                                                                                                    href="javascript:void(0);">
+                                                                                                    <polyline
+                                                                                                        points="3 6 5 6 21 6">
+                                                                                                    </polyline>
+                                                                                                    <path
+                                                                                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                                                                    </path>
+                                                                                                    <line x1="10"
+                                                                                                        y1="11" x2="10"
+                                                                                                        y2="17">
+                                                                                                    </line>
+                                                                                                    <line x1="14"
+                                                                                                        y1="11" x2="14"
+                                                                                                        y2="17">
+                                                                                                    </line>
+                                                                                                </svg>
 
-                                                                                                </div>
-                                                                                                <% } %>
+                                                                                            </div>
+                                                                                            <% } %>
 
                                                                     </div>
                                                                 </div>
