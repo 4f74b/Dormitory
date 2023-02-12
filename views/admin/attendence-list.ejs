@@ -156,7 +156,7 @@
                                             <!-- Day Counter -->
                                             <div class="flex-column bg-primary p-3 rounded">
                                                 <h5 class="text-black">
-                                                    Time Left Before Day Pass Ends
+                                                    Time Left Before Day Pass Expires
                                                 </h5>
                                                 <div id="cd-simple">
                                                     <div class="countdown mr-2">
@@ -444,26 +444,12 @@
 
 
                                                                     <div
-                                                                        class="d-flex align-items-center justify-content-end mb-3">
+                                                                        class="d-flex align-items-center justify-content-end mb-3 border-bottom border-top shadow rounded p-2">
                                                                         <button class="btn btn-success d-none">Mark as
                                                                             returned</button>
                                                                         <% if (passRequest.returnTime){ %>
-                                                                            <small>Return Time</small>
-                                                                            <div data-taskdate="08 Aug 2020"
-                                                                                class="ml-2">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                    width="18" height="18"
-                                                                                    viewBox="0 0 24 24" fill="none"
-                                                                                    stroke="currentColor"
-                                                                                    stroke-width="2"
-                                                                                    stroke-linecap="round"
-                                                                                    stroke-linejoin="round"
-                                                                                    class="feather feather-clock mr-2">
-                                                                                    <circle cx="12" cy="12" r="10">
-                                                                                    </circle>
-                                                                                    <polyline points="12 6 12 12 16 14">
-                                                                                    </polyline>
-                                                                                </svg>
+                                                                            <span>Return Time: &nbsp;</span>
+                                                                            <small data-taskdate="08 Aug 2020" class="">
 
                                                                                 <%= passRequest.returnTime.getDate() %>/
                                                                                     <%= passRequest.returnTime.getMonth()
@@ -482,8 +468,8 @@
                                                                                                     12) ? " PM" : " AM")
                                                                                                     %>
                                                                                             </small>)
-                                                                                            </small>
-                                                                            </div>
+                                                                            </small>
+                                                                            </small>
                                                                             <% } %>
 
                                                                     </div>
@@ -576,12 +562,12 @@
 
 
                 const interval1 = setInterval(() => {
-                    document.getElementById('seconds').innerHTML = --seconds;
+                    document.getElementById('seconds').innerHTML = seconds--;
                     if (seconds <= 0) {
                         seconds = 59;
-                        document.getElementById('minutes').innerHTML = --minutes;
+                        document.getElementById('minutes').innerHTML = minutes--;
                         if (minutes <= 0) {
-                            document.getElementById('hours').innerHTML = --hours;
+                            document.getElementById('hours').innerHTML = hours--;
                             minutes = 59;
                         }
                     }
@@ -599,7 +585,7 @@
 
     <script>
         const startDayCountDown = function () {
-            if (new Date().getHours() <= 14) {
+            if (new Date().getHours() < 14) {
                 const time_start = new Date();
                 const time_end = new Date();
                 const value_start = [time_start.getHours(), time_start.getMinutes(), time_start.getSeconds()]
@@ -622,12 +608,12 @@
 
 
                 const interval1 = setInterval(() => {
-                    document.getElementById('DaySeconds').innerHTML = --seconds;
+                    document.getElementById('DaySeconds').innerHTML = seconds--;
                     if (seconds <= 0) {
                         seconds = 59;
-                        document.getElementById('DayMinutes').innerHTML = --minutes;
+                        document.getElementById('DayMinutes').innerHTML = minutes--;
                         if (minutes <= 0) {
-                            document.getElementById('DayHours').innerHTML = --hours;
+                            document.getElementById('DayHours').innerHTML = hours--;
                             minutes = 59;
                         }
                     }

@@ -1,6 +1,6 @@
 <!--  BEGIN NAVBAR  -->
 <div class="sub-header-container top-0" style="top: 0;">
-    <header class="header navbar navbar-expand-sm" style="background-color: #3A533D;">
+    <header class="header navbar navbar-expand-sm p-0" style="background-color: #3A533D;">
         <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
             <svg fill="#fff" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -21,6 +21,24 @@
                     <nav class="breadcrumb-one mr-3 rounded border-right p-2" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="d-flex justify-content-end align-items-center">
+                                <h4 class="mb-0">
+                                    <a href="javascript:void(0);" class="" id="" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="true">
+                                        <img src="/hostel-files/logo/logo.png" alt="avatar" width="30" height="30">
+                                    </a>
+                                </h4>
+                            </li>
+                        </ol>
+                    </nav>
+
+                </div>
+            </li>
+            <!-- <li>
+                <div class="page-header">
+
+                    <nav class="breadcrumb-one mr-3 rounded border-right p-2" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="d-flex justify-content-end align-items-center">
                                 <h4 class="mb-0"><a class=" text-white"
                                         href="/dormitory/<%= (currentUser.role == 'warden') ? 'admin' : (currentUser.role == 'staff') ? 'staff' : 'student' %>">Home</a>
                                 </h4>
@@ -29,12 +47,8 @@
                     </nav>
 
                 </div>
-            </li>
+            </li> -->
         </ul>
-        <div class="ml-auto mr-auto pr-2 pl-2 text-white h-100 bg-dark d-flex justify-content-center align-items-center"
-            style="margin-left:auto;">Current
-            Page Name will appear here
-        </div>
         <% if (!currentUser && currentUrl.split('/')[2] !='admin' ){ %>
             <a href="/dormitory/student/login"
                 class=" ml-auto mr-5 pr-2 pl-2 text-black h-100 d-flex justify-content-center align-items-center btn btn-outline-dark"
@@ -66,11 +80,13 @@
 
 
             <% if (currentUser && currentUser.role=='student' ){ %>
-                <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample"
+                <ul class="list-unstyled menu-categories ps ps--active-y pr-0" id="accordionExample"
                     style="height: 100vh !important;">
                     <% if (currentUser){ %>
-                        <li class="menu mt-5 mb-2">
-                            <div aria-expanded="false" data-active="true"
+                        <li
+                            class="menu mt-5 mb-2 <%= (currentUrl.split('/')[3] == currentUser.username) ? 'bg-dark rounded' : '' %>">
+                            <div aria-expanded="false"
+                                data-active="<%= (currentUrl.split('/')[3] == currentUser.username) ? 'true' : 'false' %>"
                                 class="d-flex align-items-center justify-content-center mt-4" style="cursor:unset;">
                                 <div class="">
                                     <div class="media d-flex flex-column align-items-center justify-content-center">
@@ -98,7 +114,9 @@
                         <% } %>
 
                             <li class="menu">
-                                <a href="/dormitory/student/notice-board" aria-expanded="false" class="dropdown-toggle">
+                                <a href="/dormitory/student/notice-board"
+                                    data-active="<%= (currentUrl.split('/')[3] == 'notice-board') ? 'true' : 'false' %>"
+                                    aria-expanded="false" class="dropdown-toggle">
                                     <div class="">
                                         <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
@@ -124,8 +142,11 @@
                             </li>
 
                             <li class="menu">
-                                <a href="#dashboard" data-toggle="collapse" aria-expanded="false"
-                                    class="dropdown-toggle collapsed">
+                                <a href="#dashboard" data-toggle="collapse"
+                                    data-active="<%= (currentUrl.split('/')[3] == 'post-pass-request' || currentUrl.split('/')[3] == 'pass-request-status') ? 'true' : 'false' %>"
+                                    aria-expanded="<%= (currentUrl.split('/')[3] == 'post-pass-request' || currentUrl.split('/')[3] == 'pass-request-status') ? 'true' : 'false' %>"
+                                    class="dropdown-toggle <%= (currentUrl.split('/')[3]=='post-pass-request' || currentUrl.split('/')[3]=='pass-request-status' ) ? '' : 'collapse'
+                                        %>">
                                     <div class="">
                                         <svg height="200px" width="200px" version="1.1" id="Layer_1"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -176,12 +197,13 @@
                                         </svg>
                                     </div>
                                 </a>
-                                <ul class="submenu list-unstyled collapse" id="dashboard"
-                                    data-parent="#accordionExample" style="">
-                                    <li class="">
+                                <ul class="submenu list-unstyled collapse <%= (currentUrl.split('/')[3] == 'post-pass-request' || currentUrl.split('/')[3] == 'pass-request-status') ? 'show' : '' %>"
+                                    id="dashboard" data-parent="#accordionExample" style="">
+                                    <li class="<%= (currentUrl.split('/')[3] == 'post-pass-request') ? 'active' : ''%>">
                                         <a href="/dormitory/student/post-pass-request"> Send Pass Request </a>
                                     </li>
-                                    <li class="">
+                                    <li
+                                        class="<%= (currentUrl.split('/')[3] == 'pass-request-status') ? 'active' : ''%>">
                                         <a href="/dormitory/student/pass-request-status"> Pass request Status </a>
                                     </li>
                                 </ul>
@@ -189,6 +211,7 @@
 
                             <li class="menu">
                                 <a href="#components" data-toggle="collapse" aria-expanded="false"
+                                    data-active="<%= (currentUrl.split('/')[3] == 'post-complaint' || currentUrl.split('/')[3] == 'complaint-log') ? 'true' : 'false' %>"
                                     class="dropdown-toggle">
                                     <div class="">
                                         <svg fill="#000000" viewBox="0 0 32 32"
@@ -232,12 +255,12 @@
                                         </svg>
                                     </div>
                                 </a>
-                                <ul class="collapse submenu list-unstyled" id="components"
-                                    data-parent="#accordionExample">
-                                    <li>
+                                <ul class="collapse submenu list-unstyled  <%= (currentUrl.split('/')[3] == 'post-complaint' || currentUrl.split('/')[3] == 'complaint-log') ? 'show' : '' %>"
+                                    id="components" data-parent="#accordionExample">
+                                    <li class="<%= (currentUrl.split('/')[3] == 'post-complaint') ? 'active' : ''%>">
                                         <a href="/dormitory/student/post-complaint"> Write Complaint </a>
                                     </li>
-                                    <li>
+                                    <li class="<%= (currentUrl.split('/')[3] == 'complaint-log') ? 'active' : ''%>">
                                         <a href="/dormitory/student/complaint-log/<%= currentUser.username %>">
                                             Complaint Log </a>
                                     </li>
@@ -247,11 +270,11 @@
 
                 <% } else if (currentUser && currentUser.role=='warden' ){ %>
 
-                    <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample"
+                    <ul class="list-unstyled menu-categories ps ps--active-y pr-0" id="accordionExample"
                         style="height: 100vh !important;">
                         <% if (currentUser){ %>
                             <li class="menu mt-5">
-                                <div aria-expanded="false" data-active="true"
+                                <div aria-expanded="false" data-active=""
                                     class="d-flex align-items-center justify-content-center mt-4" style="cursor:unset;">
                                     <div class="">
                                         <div class="media d-flex flex-column align-items-center justify-content-center">
@@ -296,6 +319,7 @@
 
                                 <li class="menu mt-5">
                                     <a href="/dormitory/admin/notice-board" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'notice-board') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 1024 1024" class="icon" version="1.1"
@@ -328,6 +352,7 @@
 
                                 <li class="menu">
                                     <a href="/dormitory/admin/pass-requests" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'pass-requests') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg height="200px" width="200px" version="1.1" id="Layer_1"
@@ -376,6 +401,7 @@
 
                                 <li class="menu">
                                     <a href="/dormitory/admin/attendence-list" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'attendence-list') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -406,7 +432,9 @@
                                 </li>
 
                                 <li class="menu">
-                                    <a href="/dormitory/admin/complaints" aria-expanded="false" class="dropdown-toggle">
+                                    <a href="/dormitory/admin/complaints" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'complaints') ? 'true' : 'false' %>"
+                                        class="dropdown-toggle">
                                         <div class="">
                                             <svg fill="#000000" viewBox="0 0 32 32"
                                                 style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
@@ -446,6 +474,7 @@
 
                                 <li class="menu">
                                     <a href="/dormitory/admin/hostellites-list" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'hostellites-list') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
@@ -533,6 +562,7 @@
 
                                 <li class="menu">
                                     <a href="/dormitory/admin/surveillance" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'surveillance') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg fill="#000000" viewBox="0 0 32 32" version="1.1"
@@ -552,8 +582,9 @@
                                     </a>
                                 </li>
                                 <li class="menu">
-                                    <a href="/dormitory/admin/add-hostellite" aria-expanded="false"
-                                        class="dropdown-toggle">
+                                    <a href="/dormitory/admin/add-hostellite"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'add-hostellite') ? 'true' : 'false' %>"
+                                        aria-expanded="false" class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 1024 1024" class="icon" version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -578,7 +609,9 @@
                                 </li>
 
                                 <li class="menu">
-                                    <a href="/dormitory/admin/add-admin" aria-expanded="false" class="dropdown-toggle">
+                                    <a href="/dormitory/admin/add-admin" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'add-admin') ? 'true' : 'false' %>"
+                                        class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -599,7 +632,9 @@
                                 </li>
 
                                 <li class="menu">
-                                    <a href="/dormitory/admin/add-staff" aria-expanded="false" class="dropdown-toggle">
+                                    <a href="/dormitory/admin/add-staff" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'add-staff') ? 'true' : 'false' %>"
+                                        class="dropdown-toggle">
                                         <div class="">
                                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -622,6 +657,7 @@
 
                                 <li class="menu">
                                     <a href="/dormitory/admin/system-key/change" aria-expanded="false"
+                                        data-active="<%= (currentUrl.split('/')[3] == 'system-key') ? 'true' : 'false' %>"
                                         class="dropdown-toggle">
                                         <div class="">
                                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -684,11 +720,11 @@
 
                     </ul>
                     <% }else if (currentUser.role=='staff' ){ %>
-                        <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample"
+                        <ul class="list-unstyled menu-categories ps ps--active-y pr-0" id="accordionExample"
                             style="height: 100vh !important;">
                             <% if (currentUser){ %>
                                 <li class="menu mt-5 mb-5">
-                                    <div aria-expanded="false" data-active="true"
+                                    <div aria-expanded="false" data-active="false"
                                         class="d-flex align-items-center justify-content-center mt-4"
                                         style="cursor:unset;">
                                         <div class="">
@@ -734,6 +770,7 @@
                                 <% } %>
                                     <li class="menu">
                                         <a href="/dormitory/staff/hostellites-list" aria-expanded="false"
+                                            data-active="<%= (currentUrl.split('/')[3] == 'hostellites-list') ? 'true' : 'false' %>"
                                             class="dropdown-toggle">
                                             <div class="">
                                                 <svg viewBox="0 0 1024 1024" fill="#000000" class="icon" version="1.1"
@@ -819,6 +856,7 @@
                                     </li>
                                     <li class="menu">
                                         <a href="/dormitory/staff/add-hostellite" aria-expanded="false"
+                                            data-active="<%= (currentUrl.split('/')[3] == 'add-hostellite') ? 'true' : 'false' %>"
                                             class="dropdown-toggle">
                                             <div class="">
                                                 <svg viewBox="0 0 1024 1024" class="icon" version="1.1"
