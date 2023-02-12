@@ -46,110 +46,127 @@
                     </div>
                 </div>
 
-                <div class="row scrumboard" id="cancel-row">
-                    <h1 class="">All Complaints</h1>
-                    <div class="col-lg-12 layout-spacing">
+                <% if (complaints.length){ %>
+                    <div class="row scrumboard" id="cancel-row">
+                        <h1 class="">All Complaints</h1>
 
-                        <div class="task-list-section flex-wrap">
+                        <div class="col-lg-12 layout-spacing">
+
+                            <div class="task-list-section flex-wrap">
 
 
-                            <% for (complaint of complaints){ %>
+                                <% for (complaint of complaints){ %>
 
-                                <div data-section="s-new" class="task-list-container mb-4">
-                                    <div class="connect-sorting">
+                                    <div data-section="s-new" class="task-list-container mb-4">
+                                        <div class="connect-sorting">
 
-                                        <div class="connect-sorting-content ui-sortable">
+                                            <div class="connect-sorting-content ui-sortable">
 
-                                            <div data-draggable="true" class="card img-task ui-sortable-handle"
-                                                style="">
-                                                <div class="card-body">
+                                                <div data-draggable="true" class="card img-task ui-sortable-handle"
+                                                    style="">
+                                                    <div class="card-body">
 
-                                                    <div class="task-header d-flex flex-column position-relative">
-                                                        <div
-                                                            class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
-                                                            <a href="/dormitory/student/<%= complaint.sender.username %>"
-                                                                class="w-img mr-3">
-                                                                <% if (complaint.sender.profileImage){ %>
-                                                                    <img src="/hostel-files/hostellite-profile-images/<%= complaint.sender.profileImage %>"
-                                                                        alt="avatar">
-                                                                    <% }else{ %>
-
-                                                                        <img src="/assets/img/profile-6.jpg"
+                                                        <div class="task-header d-flex flex-column position-relative">
+                                                            <div
+                                                                class="media d-flex justify-content-center align-items-center mb-3 border-bottom">
+                                                                <a href="/dormitory/student/<%= complaint.sender.username %>"
+                                                                    class="w-img mr-3">
+                                                                    <% if (complaint.sender.profileImage){ %>
+                                                                        <img src="/hostel-files/hostellite-profile-images/<%= complaint.sender.profileImage %>"
                                                                             alt="avatar">
-                                                                        <% } %>
-                                                            </a>
-                                                            <div class="media-body d-flex flex-column">
-                                                                <h6 class="d-flex align-items-center">
-                                                                    <%= complaint.sender.fullName %>
-                                                                </h6>
-                                                                <p class="d-flex align-items-center">
-                                                                    Hostel <%= complaint.sender.hostelInfo.hostelNo %> ,
-                                                                        Room #
-                                                                        <%= complaint.sender.hostelInfo.roomNo %>
+                                                                        <% }else{ %>
+
+                                                                            <img src="/assets/img/profile-6.jpg"
+                                                                                alt="avatar">
+                                                                            <% } %>
+                                                                </a>
+                                                                <div class="media-body d-flex flex-column">
+                                                                    <h6 class="d-flex align-items-center">
+                                                                        <%= complaint.sender.fullName %>
+                                                                    </h6>
+                                                                    <p class="d-flex align-items-center">
+                                                                        Hostel <%= complaint.sender.hostelInfo.hostelNo
+                                                                            %> ,
+                                                                            Room #
+                                                                            <%= complaint.sender.hostelInfo.roomNo %>
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="task-body ml-2">
+                                                            <div class="task-content">
+                                                                <h5>
+                                                                    <%= complaint.complaintHeading %>
+                                                                </h5>
+                                                                <p class="" data-tasktext="">
+                                                                    <%= (complaint.formattedComplaint) ?
+                                                                        complaint.formattedComplaint : '' %>
                                                                 </p>
+
+                                                            </div>
+
+                                                            <div class="task-bottom m-0">
+                                                                <div class="tb-section-1">
+                                                                    <small data-taskdate="08 Aug 2020"><svg
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="14" height="14" viewBox="0 0 24 24"
+                                                                            fill="none" 3 stroke="currentColor"
+                                                                            stroke-width="2" stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            class="feather feather-calendar">
+                                                                            <rect x="3" y="4" width="18" height="18"
+                                                                                rx="2" ry="2">
+                                                                            </rect>
+                                                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                        </svg>
+                                                                        <%= complaint.complaintDate.getDate() %>/<%=
+                                                                                complaint.complaintDate.getMonth() %>/
+                                                                                <%= complaint.complaintDate.getFullYear()
+                                                                                    %>
+                                                                                    (<small>
+                                                                                        <%=
+                                                                                            ((complaint.complaintDate.getHours()>
+                                                                                            12) ?
+                                                                                            (complaint.complaintDate.getHours()
+                                                                                            -12) :
+                                                                                            complaint.complaintDate.getHours())+":"+complaint.complaintDate.getMinutes()
+                                                                                            +
+                                                                                            ((complaint.complaintDate.getHours()>
+                                                                                            12) ? " PM" : " AM")
+                                                                                            %>
+                                                                                    </small>)
+                                                                    </small>
+                                                                </div>
                                                             </div>
 
                                                         </div>
-                                                    </div>
-
-                                                    <div class="task-body ml-2">
-                                                        <div class="task-content">
-                                                            <p class="" data-tasktext="">
-                                                                <%= (complaint.formattedComplaint) ?
-                                                                    complaint.formattedComplaint : '' %>
-                                                            </p>
-
-                                                        </div>
-
-                                                        <div class="task-bottom m-0">
-                                                            <div class="tb-section-1">
-                                                                <small data-taskdate="08 Aug 2020"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                        height="14" viewBox="0 0 24 24" fill="none" 3
-                                                                        stroke="currentColor" stroke-width="2"
-                                                                        stroke-linecap="round" stroke-linejoin="round"
-                                                                        class="feather feather-calendar">
-                                                                        <rect x="3" y="4" width="18" height="18" rx="2"
-                                                                            ry="2">
-                                                                        </rect>
-                                                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                                                    </svg>
-                                                                    <%= complaint.complaintDate.getDate() %>/<%=
-                                                                            complaint.complaintDate.getMonth() %>/<%=
-                                                                                complaint.complaintDate.getFullYear() %>
-                                                                                (<small>
-                                                                                    <%=
-                                                                                        ((complaint.complaintDate.getHours()>
-                                                                                        12) ?
-                                                                                        (complaint.complaintDate.getHours()
-                                                                                        -12) :
-                                                                                        complaint.complaintDate.getHours())+":"+complaint.complaintDate.getMinutes()
-                                                                                        +
-                                                                                        ((complaint.complaintDate.getHours()>
-                                                                                        12) ? " PM" : " AM")
-                                                                                        %>
-                                                                                </small>)
-                                                                </small>
-                                                            </div>
-                                                        </div>
-
                                                     </div>
                                                 </div>
+
+
                                             </div>
 
-
                                         </div>
-
                                     </div>
-                                </div>
 
-                                <% } %>
+                                    <% } %>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <% }else{ %>
+                        <div
+                            class="p-4 rounded shadow bg-success d-flex flex-column justify-content-center align-items-center">
+
+                            <h1>Hurray!!!</h1>
+                            <h2>No Complaints</h2>
+                        </div>
+                        <% } %>
 
 
         </div>
