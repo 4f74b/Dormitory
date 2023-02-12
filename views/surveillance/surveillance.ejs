@@ -7,7 +7,7 @@
         <div class="container p-1 m-0" style="min-width: 100%;">
             <%- include('../partials/flash/flash.ejs') %>
 
-                <button id="toast-btn" class="btn btn-primary showNotification">show notification</button>
+                <button id="toast-btn" class="btn btn-primary showNotification d-none">show notification</button>
 
                 <!-- Toast Element -->
 
@@ -16,19 +16,19 @@
                     <div class="toast toast-primary fade hide" role="alert" data-delay="6000" aria-live="assertive"
                         aria-atomic="true">
                         <div class="toast-header">
-                            <strong class="mr-auto">Aftab Returned</strong>
+                            <strong class="mr-auto"><span id="name"></span>&nbsp;Returned</strong>
                             <small class="meta-time">just now</small>
                             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div class="toast-body">
-                            <a href="#">
-                                <img class="" style="border-radius: 50%;" src="/assets/img/AftabProfile1.jpg" alt=""
-                                    srcset="" width="60" height="60">
+                            <a href="" id="link">
+                                <img id="profileImage" class="" style="border-radius: 50%;"
+                                    src="/assets/img/profile-6.jpg" alt="" srcset="" width="60" height="60">
                             </a>
-                            Hostel# 2
-                            Room # 322
+                            Hostel <span id="hostelNo"></span>,&nbsp;
+                            Room # <span id="roomNo"></span>
                         </div>
                     </div>
                 </div>
@@ -134,8 +134,34 @@
                             tempImg = await extractFaceFromBox(video, face.detection._box);
                             //Check if the detected face is present in database
                             detection = await checkFace(face)
+                            if (detection.dayPassRequest) {
+                                console.log(detection.dayPassRequest)
+                                document.getElementById('name').innerHTML = detection.dayPassRequest.sender.fullName;
+                                if (detection.dayPassRequest.sender.profileImage) {
+                                    document.getElementById('profileImage').setAttribute('src', '/hostel-files/hostellite-profile-images/' + detection.dayPassRequest.sender.profileImage)
+                                }
+                                document.getElementById('link').setAttribute('href', '/dormitory/student/' + detection.dayPassRequest.senderUsername)
+
+                                document.getElementById('hostelNo').innerHTML = detection.dayPassRequest.sender.hostelInfo.hostelNo;
+                                document.getElementById('roomNo').innerHTML = detection.dayPassRequest.sender.hostelInfo.roomNo;
+                                document.querySelector('.showNotification').click();
+
+                            }
+                            if (detection.nightPassRequest) {
+                                console.log(detection.nightPassRequest)
+
+                                document.getElementById('name').innerHTML = detection.nightPassRequest.sender.fullName;
+                                if (detection.nightPassRequest.sender.profileImage) {
+                                    document.getElementById('profileImage').setAttribute('src', '/hostel-files/hostellite-profile-images/' + detection.nightPassRequest.sender.profileImage)
+                                }
+                                document.getElementById('link').setAttribute('href', '/dormitory/student/' + detection.nightPassRequest.senderUsername)
+
+                                document.getElementById('hostelNo').innerHTML = detection.nightPassRequest.sender.hostelInfo.hostelNo;
+                                document.getElementById('roomNo').innerHTML = detection.nightPassRequest.sender.hostelInfo.roomNo;
+                                document.querySelector('.showNotification').click();
+
+                            }
                             //If the face is not present in database
-                            console.log(detection);
                             //if (detection._label == 'unknown') {
                             //Show picture in surveillane page
                             //document.querySelector('.intruder').innerHTML += '<tbody> <tr> <td class="p-1"> <div class="td-content customer-name"> <img src="' + tempImg + '" alt="avatar"> </div> </td> <td class="p-1 w-50"> <div class="d-flex flex-column align-item-center justify-content-center"> <div>Unknown</div> <div>time</div> <div>Hostel#</div> </div> </td> <td class="p-1"> <div class="d-flex flex-column align-item-center justify-content-center"> <span class="badge badge-danger mb-1" role="button">Ignore</span> </div> </td> </tr> </tbody>';
