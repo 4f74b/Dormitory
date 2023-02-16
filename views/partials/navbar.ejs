@@ -101,7 +101,8 @@
                                         </a>
                                         <div
                                             class="media-body d-flex flex-column align-items-center justify-content-center">
-                                            <h6>
+                                            <h6
+                                                class="<%= (currentUrl.split('/')[3] == currentUser.username) ? 'text-white' : '' %>">
                                                 <%= currentUser.username %>
                                             </h6>
                                             <a href="/dormitory/student/logout"

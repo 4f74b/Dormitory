@@ -110,4 +110,7 @@
             document.getElementById('complaint').value = document.querySelector('.ql-editor').innerHTML
         });
 
+        for (let input of document.querySelectorAll('input')) {
+            input.setAttribute('required', '');
+        }
     </script>
